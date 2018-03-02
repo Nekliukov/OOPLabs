@@ -14,8 +14,9 @@ namespace LR1_Drawing {
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e) {
-            Bit
+        private void button_draw_Click(object sender, EventArgs e) {
+            Figure F = new Rectangle(picture, 10, 10, 100, 700);
+            F.Draw();
         }
     }
 }

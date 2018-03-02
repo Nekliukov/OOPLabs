@@ -1,0 +1,10 @@
+C:\Users\nekro\source\repos\LR1-Drawing\LR1-Drawing\obj\Debug\LR1-Drawing.csprojResolveAssemblyReference.cache
+C:\Users\nekro\source\repos\LR1-Drawing\LR1-Drawing\obj\Debug\LR1_Drawing.FormDrawing.resources
+C:\Users\nekro\source\repos\LR1-Drawing\LR1-Drawing\obj\Debug\LR1_Drawing.Properties.Resources.resources
+C:\Users\nekro\source\repos\LR1-Drawing\LR1-Drawing\obj\Debug\LR1-Drawing.csproj.GenerateResource.Cache
+C:\Users\nekro\source\repos\LR1-Drawing\LR1-Drawing\obj\Debug\LR1-Drawing.csproj.CoreCompileInputs.cache
+C:\Users\nekro\source\repos\LR1-Drawing\LR1-Drawing\bin\Debug\LR1-Drawing.exe.config
+C:\Users\nekro\source\repos\LR1-Drawing\LR1-Drawing\bin\Debug\LR1-Drawing.exe
+C:\Users\nekro\source\repos\LR1-Drawing\LR1-Drawing\bin\Debug\LR1-Drawing.pdb
+C:\Users\nekro\source\repos\LR1-Drawing\LR1-Drawing\obj\Debug\LR1-Drawing.exe
+C:\Users\nekro\source\repos\LR1-Drawing\LR1-Drawing\obj\Debug\LR1-Drawing.pdb
