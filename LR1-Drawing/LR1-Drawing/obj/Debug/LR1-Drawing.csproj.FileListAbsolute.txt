@@ -8,3 +8,12 @@ C:\Users\nekro\source\repos\LR1-Drawing\LR1-Drawing\bin\Debug\LR1-Drawing.exe
 C:\Users\nekro\source\repos\LR1-Drawing\LR1-Drawing\bin\Debug\LR1-Drawing.pdb
 C:\Users\nekro\source\repos\LR1-Drawing\LR1-Drawing\obj\Debug\LR1-Drawing.exe
 C:\Users\nekro\source\repos\LR1-Drawing\LR1-Drawing\obj\Debug\LR1-Drawing.pdb
+D:\github\OOPLabs\LR1-Drawing\LR1-Drawing\bin\Debug\LR1-Drawing.exe.config
+D:\github\OOPLabs\LR1-Drawing\LR1-Drawing\obj\Debug\LR1-Drawing.exe
+D:\github\OOPLabs\LR1-Drawing\LR1-Drawing\obj\Debug\LR1-Drawing.pdb
+D:\github\OOPLabs\LR1-Drawing\LR1-Drawing\bin\Debug\LR1-Drawing.exe
+D:\github\OOPLabs\LR1-Drawing\LR1-Drawing\bin\Debug\LR1-Drawing.pdb
+D:\github\OOPLabs\LR1-Drawing\LR1-Drawing\obj\Debug\LR1-Drawing.csprojResolveAssemblyReference.cache
+D:\github\OOPLabs\LR1-Drawing\LR1-Drawing\obj\Debug\LR1_Drawing.FormDrawing.resources
+D:\github\OOPLabs\LR1-Drawing\LR1-Drawing\obj\Debug\LR1_Drawing.Properties.Resources.resources
+D:\github\OOPLabs\LR1-Drawing\LR1-Drawing\obj\Debug\LR1-Drawing.csproj.GenerateResource.Cache
