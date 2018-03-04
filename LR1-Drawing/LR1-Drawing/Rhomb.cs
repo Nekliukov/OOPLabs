@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,8 +11,8 @@ namespace LR1_Drawing {
         public Rhomb(PictureBox pic) : base(pic) {
         }
 
-        public override void Draw() {
-            //coming soon...
+        public override void Draw(Point P1, Point P2) {
+           // graph.Draw
         }
     }
 }
