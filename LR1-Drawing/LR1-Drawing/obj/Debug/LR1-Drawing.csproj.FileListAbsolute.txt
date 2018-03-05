@@ -17,3 +17,13 @@ D:\github\OOPLabs\LR1-Drawing\LR1-Drawing\obj\Debug\LR1-Drawing.csprojResolveAss
 D:\github\OOPLabs\LR1-Drawing\LR1-Drawing\obj\Debug\LR1_Drawing.FormDrawing.resources
 D:\github\OOPLabs\LR1-Drawing\LR1-Drawing\obj\Debug\LR1_Drawing.Properties.Resources.resources
 D:\github\OOPLabs\LR1-Drawing\LR1-Drawing\obj\Debug\LR1-Drawing.csproj.GenerateResource.Cache
+D:\git_projects\OOPLabs\LR1-Drawing\LR1-Drawing\bin\Debug\LR1-Drawing.exe.config
+D:\git_projects\OOPLabs\LR1-Drawing\LR1-Drawing\bin\Debug\LR1-Drawing.exe
+D:\git_projects\OOPLabs\LR1-Drawing\LR1-Drawing\bin\Debug\LR1-Drawing.pdb
+D:\git_projects\OOPLabs\LR1-Drawing\LR1-Drawing\obj\Debug\LR1-Drawing.csprojResolveAssemblyReference.cache
+D:\git_projects\OOPLabs\LR1-Drawing\LR1-Drawing\obj\Debug\LR1_Drawing.FormDrawing.resources
+D:\git_projects\OOPLabs\LR1-Drawing\LR1-Drawing\obj\Debug\LR1_Drawing.Properties.Resources.resources
+D:\git_projects\OOPLabs\LR1-Drawing\LR1-Drawing\obj\Debug\LR1-Drawing.csproj.GenerateResource.Cache
+D:\git_projects\OOPLabs\LR1-Drawing\LR1-Drawing\obj\Debug\LR1-Drawing.csproj.CoreCompileInputs.cache
+D:\git_projects\OOPLabs\LR1-Drawing\LR1-Drawing\obj\Debug\LR1-Drawing.exe
+D:\git_projects\OOPLabs\LR1-Drawing\LR1-Drawing\obj\Debug\LR1-Drawing.pdb

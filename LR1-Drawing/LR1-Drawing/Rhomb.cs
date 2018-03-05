@@ -11,7 +11,7 @@ namespace LR1_Drawing {
         public Rhomb(PictureBox pic) : base(pic) {
         }
 
-        public override void Draw(Point P1, Point P2) {
+        public override void Draw(params Point[] points) {
            // graph.Draw
         }
     }

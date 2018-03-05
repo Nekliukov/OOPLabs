@@ -14,12 +14,13 @@ namespace LR1_Drawing {
 
         public Rectangle(PictureBox pic) : base(pic) { }
 
-        public override void Draw(Point p1, Point p2) {
-            width = Math.Abs(p1.X - p2.X);
-            height = Math.Abs(p1.Y - p2.Y);
-            height = p2.Y - p1.Y;
-            graph.DrawRectangle(pen, p1.X, p1.Y, width, height);
+        public override void Draw(params Point[] points) {
+            width = Math.Abs(points[0].X - points[1].X);
+            height = Math.Abs(points[0].Y - points[1].Y);
+            graph.DrawRectangle(pen, points[0].X, points[0].Y, width, height);
             picture.Image = bmp;
         }
+
+        public override void Instructions(RichTextBox info) => info.Text = "Choose two points, starting from the left top of the rectangle to the right bottom.";
     }
 }

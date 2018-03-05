@@ -13,14 +13,11 @@ namespace LR1_Drawing {
         public Line(PictureBox pic) : base(pic) { }
 
 
-        public override void Draw(Point P1, Point P2) {
-            graph.DrawLine(pen, P1, P2);
+        public override void Draw(params Point[] points) {
+            graph.DrawLine(pen, points[0], points[1]);
             picture.Image = bmp;
         }
 
-        public override void Instructions(Label l)
-        {
-            l.Text = "Starting from the left side, click on the board twice to choose points of the line.";
-        }
+        public override void Instructions(RichTextBox info) => info.Text = "Just choose two points :) A line will appear between their";
     }
 }

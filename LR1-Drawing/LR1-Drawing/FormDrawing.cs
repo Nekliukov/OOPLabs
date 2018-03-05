@@ -15,26 +15,39 @@ namespace LR1_Drawing {
         }
 
         public List<Object> figures = new List<Object>();
-        
+
+        private void FormDrawing_Load(object sender, EventArgs e) {
+            FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            WindowState = FormWindowState.Maximized;
+
+            figures.Add(new Line(picture));
+            figures.Add(new Rectangle(picture));
+            figures.Add(new Circle(picture));
+            figures.Add(new Ellipse(picture));
+        }
 
         private void button_draw_Click(object sender, EventArgs e) {
-            int x1 = Convert.ToInt32(tb_x1.Text);
-            int y1 = Convert.ToInt32(tb_y1.Text);
-            int x2 = Convert.ToInt32(tb_x2.Text);
-            int y2 = Convert.ToInt32(tb_y2.Text);
-            
+            try {
+                Convert.ToInt32(tb_x1.Text);
+                Convert.ToInt32(tb_x2.Text);
+            } catch (FormatException) {
+                MessageBox.Show("Wrong Data.Please, check point's locations");
+                return;
+            }
+
+            int x1 = Convert.ToInt32(tb_x1.Text); int y1 = Convert.ToInt32(tb_y1.Text);
+            int x2 = Convert.ToInt32(tb_x2.Text); int y2 = Convert.ToInt32(tb_y2.Text);
+
+
             Point P1 = new Point(x1, y1);
             Point P2 = new Point(x2, y2);
-
-            
+           
             foreach(Figure obj in figures) {
                 if (obj.GetType().Name == comboBox1.Text)
                     obj.Draw(P1, P2);
             }
 
-
             tb_x1.Text = tb_x2.Text = tb_y1.Text = tb_y2.Text = "";
-            
         }
 
         private void picture_MouseClick(object sender, MouseEventArgs e)
@@ -48,14 +61,15 @@ namespace LR1_Drawing {
                 tb_x2.Text = Convert.ToString(X);
                 tb_y2.Text = Convert.ToString(Y);
             }
-        }
+        }  
 
-        private void FormDrawing_Load(object sender, EventArgs e)
-        {
-            figures.Add(new Line(picture));
-            figures.Add(new Rectangle(picture));
-            figures.Add(new Circle(picture));
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e) {
+            picture.BackColor = Color.White;
+            foreach (Figure obj in figures) {
+                if (obj.GetType().Name == comboBox1.Text) {
+                    obj.Instructions(rtb_info); obj.Clear();
+                }
+            }
         }
-
     }
 }
