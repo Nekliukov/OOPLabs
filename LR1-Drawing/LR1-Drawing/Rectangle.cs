@@ -11,6 +11,7 @@ using System.Windows.Forms;
 namespace LR1_Drawing {
     class Rectangle : Figure {
         private float width, height;
+        public int par_num = 2;
 
         public Rectangle(PictureBox pic) : base(pic) { }
 

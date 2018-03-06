@@ -1,5 +1,6 @@
 ﻿using System.Windows.Forms;
 using System.Drawing;
+using System;
 
 namespace LR1_Drawing {
     public class Figure {
@@ -26,5 +27,11 @@ namespace LR1_Drawing {
         public void Clear() {
             graph.Clear(Color.White);
         }
+
+        public int GetGipo(int a, int b) { 
+            return (int)Math.Sqrt(Math.Pow(Math.Abs(a), 2) + Math.Pow(Math.Abs(b), 2));
+        }
+
+        public virtual int GetParNum() { return 2; }
     }
 }

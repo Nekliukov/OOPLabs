@@ -8,7 +8,6 @@ using System.Windows.Forms;
 
 namespace LR1_Drawing {
     class Line: Figure {
-        private Point p1,p2;
 
         public Line(PictureBox pic) : base(pic) { }
 

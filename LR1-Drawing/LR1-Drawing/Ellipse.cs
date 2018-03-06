@@ -10,7 +10,7 @@ namespace LR1_Drawing {
     class Ellipse : Figure {
         public Ellipse(PictureBox pic) : base(pic) {
         }
-
+        public int par_num = 2;
         private float width, height;
 
         public override void Draw(params Point[] points) {

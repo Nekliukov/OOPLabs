@@ -35,9 +35,13 @@
             this.label_y2 = new System.Windows.Forms.Label();
             this.tb_y2 = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.rtb_info = new System.Windows.Forms.RichTextBox();
             this.label_instr = new System.Windows.Forms.Label();
             this.label_choice = new System.Windows.Forms.Label();
-            this.rtb_info = new System.Windows.Forms.RichTextBox();
+            this.tb_y3 = new System.Windows.Forms.TextBox();
+            this.label_y3 = new System.Windows.Forms.Label();
+            this.label_x3 = new System.Windows.Forms.Label();
+            this.tb_x3 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.picture)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -48,7 +52,7 @@
             this.picture.Dock = System.Windows.Forms.DockStyle.Fill;
             this.picture.Location = new System.Drawing.Point(0, 0);
             this.picture.Name = "picture";
-            this.picture.Size = new System.Drawing.Size(1408, 821);
+            this.picture.Size = new System.Drawing.Size(1370, 749);
             this.picture.TabIndex = 0;
             this.picture.TabStop = false;
             this.picture.MouseClick += new System.Windows.Forms.MouseEventHandler(this.picture_MouseClick);
@@ -57,7 +61,7 @@
             // 
             this.button_draw.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.button_draw.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button_draw.Location = new System.Drawing.Point(1187, 84);
+            this.button_draw.Location = new System.Drawing.Point(1149, 109);
             this.button_draw.Name = "button_draw";
             this.button_draw.Size = new System.Drawing.Size(188, 47);
             this.button_draw.TabIndex = 1;
@@ -153,6 +157,10 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.tb_y3);
+            this.panel1.Controls.Add(this.label_y3);
+            this.panel1.Controls.Add(this.label_x3);
+            this.panel1.Controls.Add(this.tb_x3);
             this.panel1.Controls.Add(this.rtb_info);
             this.panel1.Controls.Add(this.label_instr);
             this.panel1.Controls.Add(this.label_choice);
@@ -168,10 +176,19 @@
             this.panel1.Controls.Add(this.label_y1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.panel1.Location = new System.Drawing.Point(0, 670);
+            this.panel1.Location = new System.Drawing.Point(0, 573);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1408, 151);
+            this.panel1.Size = new System.Drawing.Size(1370, 176);
             this.panel1.TabIndex = 12;
+            // 
+            // rtb_info
+            // 
+            this.rtb_info.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.rtb_info.Location = new System.Drawing.Point(278, 34);
+            this.rtb_info.Name = "rtb_info";
+            this.rtb_info.Size = new System.Drawing.Size(841, 102);
+            this.rtb_info.TabIndex = 19;
+            this.rtb_info.Text = "Just choose two points :) A line will appear between their.";
             // 
             // label_instr
             // 
@@ -193,20 +210,47 @@
             this.label_choice.TabIndex = 16;
             this.label_choice.Text = "Choose figure\'s type";
             // 
-            // rtb_info
+            // tb_y3
             // 
-            this.rtb_info.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.rtb_info.Location = new System.Drawing.Point(278, 34);
-            this.rtb_info.Name = "rtb_info";
-            this.rtb_info.Size = new System.Drawing.Size(841, 102);
-            this.rtb_info.TabIndex = 19;
-            this.rtb_info.Text = "Just choose two points :) A line will appear between their.";
+            this.tb_y3.Location = new System.Drawing.Point(142, 145);
+            this.tb_y3.Name = "tb_y3";
+            this.tb_y3.ReadOnly = true;
+            this.tb_y3.Size = new System.Drawing.Size(47, 26);
+            this.tb_y3.TabIndex = 23;
+            // 
+            // label_y3
+            // 
+            this.label_y3.AutoSize = true;
+            this.label_y3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label_y3.Location = new System.Drawing.Point(195, 148);
+            this.label_y3.Name = "label_y3";
+            this.label_y3.Size = new System.Drawing.Size(29, 20);
+            this.label_y3.TabIndex = 22;
+            this.label_y3.Text = "Y3";
+            // 
+            // label_x3
+            // 
+            this.label_x3.AutoSize = true;
+            this.label_x3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label_x3.Location = new System.Drawing.Point(70, 148);
+            this.label_x3.Name = "label_x3";
+            this.label_x3.Size = new System.Drawing.Size(29, 20);
+            this.label_x3.TabIndex = 21;
+            this.label_x3.Text = "X3";
+            // 
+            // tb_x3
+            // 
+            this.tb_x3.Location = new System.Drawing.Point(14, 145);
+            this.tb_x3.Name = "tb_x3";
+            this.tb_x3.ReadOnly = true;
+            this.tb_x3.Size = new System.Drawing.Size(50, 26);
+            this.tb_x3.TabIndex = 20;
             // 
             // FormDrawing
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1408, 821);
+            this.ClientSize = new System.Drawing.Size(1370, 749);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.picture);
             this.Name = "FormDrawing";
@@ -237,6 +281,10 @@
         private System.Windows.Forms.Label label_choice;
         private System.Windows.Forms.Label label_instr;
         private System.Windows.Forms.RichTextBox rtb_info;
+        private System.Windows.Forms.TextBox tb_y3;
+        private System.Windows.Forms.Label label_y3;
+        private System.Windows.Forms.Label label_x3;
+        private System.Windows.Forms.TextBox tb_x3;
     }
 }
 

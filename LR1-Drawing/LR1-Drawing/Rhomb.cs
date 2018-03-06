@@ -12,7 +12,7 @@ namespace LR1_Drawing {
         }
 
         public override void Draw(params Point[] points) {
-           // graph.Draw
+           
         }
     }
 }

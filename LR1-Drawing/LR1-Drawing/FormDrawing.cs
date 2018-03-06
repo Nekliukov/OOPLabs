@@ -16,6 +16,13 @@ namespace LR1_Drawing {
 
         public List<Object> figures = new List<Object>();
 
+        public Point Get3rdPoint() {
+            int x3 = Convert.ToInt32(tb_x3.Text);
+            int y3 = Convert.ToInt32(tb_y3.Text);
+            Point P3 = new Point(x3, y3);
+            return P3;
+        }
+
         private void FormDrawing_Load(object sender, EventArgs e) {
             FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             WindowState = FormWindowState.Maximized;
@@ -24,6 +31,7 @@ namespace LR1_Drawing {
             figures.Add(new Rectangle(picture));
             figures.Add(new Circle(picture));
             figures.Add(new Ellipse(picture));
+            figures.Add(new Triangle(picture));
         }
 
         private void button_draw_Click(object sender, EventArgs e) {
@@ -37,17 +45,23 @@ namespace LR1_Drawing {
 
             int x1 = Convert.ToInt32(tb_x1.Text); int y1 = Convert.ToInt32(tb_y1.Text);
             int x2 = Convert.ToInt32(tb_x2.Text); int y2 = Convert.ToInt32(tb_y2.Text);
+            
 
 
             Point P1 = new Point(x1, y1);
             Point P2 = new Point(x2, y2);
-           
-            foreach(Figure obj in figures) {
+
+            foreach (Figure obj in figures) {
                 if (obj.GetType().Name == comboBox1.Text)
-                    obj.Draw(P1, P2);
+                    if (obj.GetParNum() == 2)
+                        obj.Draw(P1, P2);
+                    else
+                        try { obj.Draw(P1, P2, Get3rdPoint()); }
+                        catch { MessageBox.Show("Please, add the 3rd point!"); return; }                    
             }
 
-            tb_x1.Text = tb_x2.Text = tb_y1.Text = tb_y2.Text = "";
+            tb_x1.Text = tb_x2.Text = tb_y1.Text = tb_y2.Text = tb_x3.Text = tb_y3.Text = "";
+
         }
 
         private void picture_MouseClick(object sender, MouseEventArgs e)
@@ -56,14 +70,30 @@ namespace LR1_Drawing {
             if (tb_x1.Text == ""){
                 tb_x1.Text = Convert.ToString(X);
                 tb_y1.Text = Convert.ToString(Y);
+                return;
             }
-            else{
+
+            if (tb_x2.Text == ""){
                 tb_x2.Text = Convert.ToString(X);
                 tb_y2.Text = Convert.ToString(Y);
+                return;
             }
+
+            foreach (Figure obj in figures){
+                if (obj.GetType().Name == comboBox1.Text) {
+                    if (obj.GetParNum() == 3){
+                        tb_x3.ReadOnly = false; tb_y3.ReadOnly = false;
+                        tb_x3.Text = Convert.ToString(X);
+                        tb_y3.Text = Convert.ToString(Y);
+                        break;
+                    }
+                }
+            }
+            tb_x3.ReadOnly = true; tb_y3.ReadOnly = true;
         }  
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e) {
+            tb_x1.Text = tb_x2.Text = tb_y1.Text = tb_y2.Text = tb_x3.Text = tb_y3.Text = "";
             picture.BackColor = Color.White;
             foreach (Figure obj in figures) {
                 if (obj.GetType().Name == comboBox1.Text) {
