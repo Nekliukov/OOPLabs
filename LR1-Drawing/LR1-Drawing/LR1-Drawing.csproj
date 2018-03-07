@@ -48,6 +48,7 @@
     <Compile Include="Circle.cs" />
     <Compile Include="Ellipse.cs" />
     <Compile Include="Figure.cs" />
+    <Compile Include="FigureList.cs" />
     <Compile Include="FormDrawing.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -58,7 +59,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Rectangle.cs" />
-    <Compile Include="Rhomb.cs" />
+    <Compile Include="Rhombus.cs" />
     <Compile Include="Triangle.cs" />
     <EmbeddedResource Include="FormDrawing.resx">
       <DependentUpon>FormDrawing.cs</DependentUpon>

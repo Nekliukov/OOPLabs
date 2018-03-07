@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Drawing;
 using System.Windows.Forms;
 
 namespace LR1_Drawing {
@@ -11,13 +6,13 @@ namespace LR1_Drawing {
 
         public Line(PictureBox pic) : base(pic) { }
 
-
         public override void Draw(params Point[] points) {
             graph = Graphics.FromImage(bmp);
             graph.DrawLine(pen, points[0], points[1]);
             picture.Image = bmp;
         }
 
-        public override void Instructions(RichTextBox info) => info.Text = "Just choose two points :) A line will appear between their";
+        public override void Instructions(RichTextBox info) => info.Text =
+            "Just choose two points :) A line will appear between their";
     }
 }

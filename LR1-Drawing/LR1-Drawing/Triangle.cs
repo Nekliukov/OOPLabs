@@ -1,20 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Drawing;
 using System.Windows.Forms;
-using System.Drawing;
 
 namespace LR1_Drawing {
     class Triangle: Figure  {
-        public Triangle(PictureBox pic) : base(pic) {
-        }
+        public Triangle(PictureBox pic) : base(pic) { }
 
-        public override int GetParNum()
-        {
-            return 3;
-        }
+        public override int GetParNum() { return 3;}
 
         public override void Draw(params Point[] points) {
             graph = Graphics.FromImage(bmp);

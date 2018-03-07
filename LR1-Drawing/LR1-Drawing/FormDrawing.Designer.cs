@@ -35,6 +35,7 @@
             this.label_y2 = new System.Windows.Forms.Label();
             this.tb_y2 = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button_clean = new System.Windows.Forms.Button();
             this.tb_y3 = new System.Windows.Forms.TextBox();
             this.label_y3 = new System.Windows.Forms.Label();
             this.label_x3 = new System.Windows.Forms.Label();
@@ -42,7 +43,6 @@
             this.rtb_info = new System.Windows.Forms.RichTextBox();
             this.label_instr = new System.Windows.Forms.Label();
             this.label_choice = new System.Windows.Forms.Label();
-            this.button_clean = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.picture)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -74,13 +74,6 @@
             // 
             this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Line",
-            "Rectangle",
-            "Triangle",
-            "Circle",
-            "Ellipse",
-            "Rhomb"});
             this.comboBox1.Location = new System.Drawing.Point(14, 39);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(201, 28);
@@ -183,11 +176,22 @@
             this.panel1.Size = new System.Drawing.Size(1370, 176);
             this.panel1.TabIndex = 12;
             // 
+            // button_clean
+            // 
+            this.button_clean.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button_clean.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button_clean.Location = new System.Drawing.Point(1149, 34);
+            this.button_clean.Name = "button_clean";
+            this.button_clean.Size = new System.Drawing.Size(188, 47);
+            this.button_clean.TabIndex = 24;
+            this.button_clean.Text = "Clean";
+            this.button_clean.UseVisualStyleBackColor = true;
+            this.button_clean.Click += new System.EventHandler(this.button_clean_Click);
+            // 
             // tb_y3
             // 
             this.tb_y3.Location = new System.Drawing.Point(142, 145);
             this.tb_y3.Name = "tb_y3";
-            this.tb_y3.ReadOnly = true;
             this.tb_y3.Size = new System.Drawing.Size(47, 26);
             this.tb_y3.TabIndex = 23;
             // 
@@ -215,7 +219,6 @@
             // 
             this.tb_x3.Location = new System.Drawing.Point(14, 145);
             this.tb_x3.Name = "tb_x3";
-            this.tb_x3.ReadOnly = true;
             this.tb_x3.Size = new System.Drawing.Size(50, 26);
             this.tb_x3.TabIndex = 20;
             // 
@@ -247,18 +250,6 @@
             this.label_choice.Size = new System.Drawing.Size(153, 20);
             this.label_choice.TabIndex = 16;
             this.label_choice.Text = "Choose figure\'s type";
-            // 
-            // button_clean
-            // 
-            this.button_clean.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button_clean.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button_clean.Location = new System.Drawing.Point(1149, 34);
-            this.button_clean.Name = "button_clean";
-            this.button_clean.Size = new System.Drawing.Size(188, 47);
-            this.button_clean.TabIndex = 24;
-            this.button_clean.Text = "Clean";
-            this.button_clean.UseVisualStyleBackColor = true;
-            this.button_clean.Click += new System.EventHandler(this.button_clean_Click);
             // 
             // FormDrawing
             // 

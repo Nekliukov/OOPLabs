@@ -22,11 +22,12 @@ namespace LR1_Drawing {
             pen = new Pen(Color.Black,4);
         }
 
-        public int GetGipo(int a, int b) { 
+        protected int GetHypo(int a, int b) { 
             return (int)Math.Sqrt(Math.Pow(Math.Abs(a), 2) + Math.Pow(Math.Abs(b), 2));
         }
 
         public virtual int GetParNum() { return 2; }
+
         public void Clear() { graph.Clear(Color.White); }
     }
 }
