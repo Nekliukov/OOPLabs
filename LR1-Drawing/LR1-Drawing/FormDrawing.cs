@@ -15,6 +15,8 @@ namespace LR1_Drawing {
         }
 
         public List<Object> figures = new List<Object>();
+        public bool IsFirst = true;
+        public Bitmap bit;
 
         public Point Get3rdPoint() {
             int x3 = Convert.ToInt32(tb_x3.Text);
@@ -26,6 +28,7 @@ namespace LR1_Drawing {
         private void FormDrawing_Load(object sender, EventArgs e) {
             FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             WindowState = FormWindowState.Maximized;
+            bit = new Bitmap(picture.Width, picture.Height);
 
             figures.Add(new Line(picture));
             figures.Add(new Rectangle(picture));
@@ -46,18 +49,18 @@ namespace LR1_Drawing {
             int x1 = Convert.ToInt32(tb_x1.Text); int y1 = Convert.ToInt32(tb_y1.Text);
             int x2 = Convert.ToInt32(tb_x2.Text); int y2 = Convert.ToInt32(tb_y2.Text);
             
-
-
             Point P1 = new Point(x1, y1);
             Point P2 = new Point(x2, y2);
 
             foreach (Figure obj in figures) {
+                obj.bmp = bit;
                 if (obj.GetType().Name == comboBox1.Text)
                     if (obj.GetParNum() == 2)
                         obj.Draw(P1, P2);
                     else
                         try { obj.Draw(P1, P2, Get3rdPoint()); }
-                        catch { MessageBox.Show("Please, add the 3rd point!"); return; }                    
+                        catch { MessageBox.Show("Please, add the 3rd point!"); return; }
+                if (IsFirst) bit = obj.bmp;                   
             }
 
             tb_x1.Text = tb_x2.Text = tb_y1.Text = tb_y2.Text = tb_x3.Text = tb_y3.Text = "";
@@ -94,12 +97,20 @@ namespace LR1_Drawing {
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e) {
             tb_x1.Text = tb_x2.Text = tb_y1.Text = tb_y2.Text = tb_x3.Text = tb_y3.Text = "";
-            picture.BackColor = Color.White;
-            foreach (Figure obj in figures) {
+            foreach (Figure obj in figures){
                 if (obj.GetType().Name == comboBox1.Text) {
-                    obj.Instructions(rtb_info); obj.Clear();
+                    obj.Instructions(rtb_info);
                 }
-            }
+            }           
+        }
+
+        private void button_clean_Click(object sender, EventArgs e)
+        {
+           foreach (Figure obj in figures) {
+                if (obj.GetType().Name == comboBox1.Text) {
+                    obj.Clear(); obj.Draw(new Point(0, 0), new Point(0, 0));
+                }
+           }
         }
     }
 }

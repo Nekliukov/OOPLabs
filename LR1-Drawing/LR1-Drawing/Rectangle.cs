@@ -16,7 +16,7 @@ namespace LR1_Drawing {
         public Rectangle(PictureBox pic) : base(pic) { }
 
         public override void Draw(params Point[] points) {
-            width = Math.Abs(points[0].X - points[1].X);
+            graph = Graphics.FromImage(bmp); width = Math.Abs(points[0].X - points[1].X);
             height = Math.Abs(points[0].Y - points[1].Y);
             graph.DrawRectangle(pen, points[0].X, points[0].Y, width, height);
             picture.Image = bmp;

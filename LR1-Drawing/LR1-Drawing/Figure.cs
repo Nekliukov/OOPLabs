@@ -7,7 +7,7 @@ namespace LR1_Drawing {
         protected PictureBox picture;
         protected Graphics graph;
         protected Pen pen;
-        protected Bitmap bmp;
+        public Bitmap bmp;
 
         public virtual void Draw(params Point[] points) {
             if (points == null) {
@@ -19,13 +19,7 @@ namespace LR1_Drawing {
 
         public Figure(PictureBox pic) {
             picture = pic;
-            bmp = new Bitmap(picture.Width, picture.Height);
-            graph = Graphics.FromImage(bmp);
             pen = new Pen(Color.Black,4);
-        }
-
-        public void Clear() {
-            graph.Clear(Color.White);
         }
 
         public int GetGipo(int a, int b) { 
@@ -33,5 +27,6 @@ namespace LR1_Drawing {
         }
 
         public virtual int GetParNum() { return 2; }
+        public void Clear() { graph.Clear(Color.White); }
     }
 }

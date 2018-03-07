@@ -17,6 +17,7 @@ namespace LR1_Drawing {
         }
 
         public override void Draw(params Point[] points) {
+            graph = Graphics.FromImage(bmp);
             graph.DrawLine(pen, points[0], points[1]);
             graph.DrawLine(pen, points[1], points[2]);
             graph.DrawLine(pen, points[2], points[0]);

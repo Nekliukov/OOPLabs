@@ -11,7 +11,7 @@ namespace LR1_Drawing
         public Circle(PictureBox pic) : base(pic) { }
 
         public override void Draw(params Point[] points) {
-            radius = (int)Math.Sqrt(Math.Pow(points[1].X - points[0].X, 2)
+            graph = Graphics.FromImage(bmp); radius = (int)Math.Sqrt(Math.Pow(points[1].X - points[0].X, 2)
                                   + Math.Pow(points[1].Y - points[0].Y, 2));
             graph.DrawEllipse(pen, points[0].X - radius, points[0].Y - radius, radius * 2, radius * 2);
             picture.Image = bmp;

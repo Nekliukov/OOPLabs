@@ -14,7 +14,7 @@ namespace LR1_Drawing {
         private float width, height;
 
         public override void Draw(params Point[] points) {
-
+            graph = Graphics.FromImage(bmp);
             width = Math.Abs(points[0].X - points[1].X);
             height = Math.Abs(points[0].Y - points[1].Y);
             graph.DrawEllipse(pen, points[0].X, points[0].Y, width, height);
