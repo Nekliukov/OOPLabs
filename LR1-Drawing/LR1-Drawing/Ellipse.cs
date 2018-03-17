@@ -6,12 +6,11 @@ namespace LR1_Drawing {
     class Ellipse : Figure {
         public Ellipse(PictureBox pic) : base(pic) { }
 
-        public override void Draw(params Point[] points) {
-            graph = Graphics.FromImage(bmp);
+        protected override void Draw(params Point[] points) {
+            points = Check_Points(points[0], points[1]);
             float width = Math.Abs(points[0].X - points[1].X);
             float height = Math.Abs(points[0].Y - points[1].Y);
             graph.DrawEllipse(pen, points[0].X, points[0].Y, width, height);
-            picture.Image = bmp;
         }
 
         public override void Instructions(RichTextBox info) => info.Text = "Imagine that you are drawing a rectangle: Choose two points,"+

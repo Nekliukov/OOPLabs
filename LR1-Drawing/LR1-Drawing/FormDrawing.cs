@@ -38,10 +38,10 @@ namespace LR1_Drawing {
                 obj.bmp = curr_bit; //getting the last bitmap state to save the last draws
                 if (obj.GetType().Name == comboBox1.Text)
                     //Drawing
-                    if (obj.GetParNum() == 2) 
-                        obj.Draw(new Point(x0, y0), new Point(x1, y1));
+                    if (obj.PatNum == 2) 
+                        obj.Do_Draw(new Point(x0, y0), new Point(x1, y1));
                     else // Case, if we need one more point for drawing (for ex. Triangle)
-                        try { obj.Draw(new Point(x0, y0), new Point(x1, y1), new Point(x2, y2)); }
+                        try { obj.Do_Draw(new Point(x0, y0), new Point(x1, y1), new Point(x2, y2)); }
                         catch { MessageBox.Show("Please, add the 3rd point!"); return; }                
             }
             tb_x1.Text = tb_x2.Text = tb_y1.Text = tb_y2.Text = tb_x3.Text = tb_y3.Text = "";
@@ -64,7 +64,7 @@ namespace LR1_Drawing {
 
             foreach (Figure obj in FigureList.figures) {
                 if (obj.GetType().Name == comboBox1.Text) {
-                    if (obj.GetParNum() == 3){
+                    if (obj.PatNum == 3){
                         tb_x3.Text = Convert.ToString(X);
                         tb_y3.Text = Convert.ToString(Y);
                         x2 = X; y2 = Y; break;
@@ -86,7 +86,7 @@ namespace LR1_Drawing {
         //Wierd realisation of bitmap's clearing 
         private void button_clean_Click(object sender, EventArgs e) {
            foreach (Figure obj in FigureList.figures) {
-                obj.Clear(); obj.Draw(new Point(0, 0), new Point(0, 0));
+                obj.Clear(); obj.Do_Draw(new Point(0, 0), new Point(0, 0));
                 break;
            }
         }

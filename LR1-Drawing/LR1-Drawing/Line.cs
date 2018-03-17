@@ -6,10 +6,8 @@ namespace LR1_Drawing {
 
         public Line(PictureBox pic) : base(pic) { }
 
-        public override void Draw(params Point[] points) {
-            graph = Graphics.FromImage(bmp);
+        protected override void Draw(params Point[] points) {
             graph.DrawLine(pen, points[0], points[1]);
-            picture.Image = bmp;
         }
 
         public override void Instructions(RichTextBox info) => info.Text =

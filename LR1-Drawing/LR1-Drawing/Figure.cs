@@ -3,30 +3,45 @@ using System.Drawing;
 using System;
 
 namespace LR1_Drawing {
-    public class Figure {
+    public abstract class Figure {
         protected PictureBox picture;
         protected Graphics graph;
         protected Pen pen;
         public Bitmap bmp;
 
-        public virtual void Draw(params Point[] points) {
-            if (points == null) {
-                throw new System.ArgumentNullException(nameof(points));
-            }
+        public virtual int PatNum { get { return 2; } }
+        
+        protected abstract void Draw(params Point[] points);
+
+        public void Do_Draw(params Point[] points) {
+            graph = Graphics.FromImage(bmp);
+            Draw(points);
+            picture.Image = bmp;
         }
 
-        public virtual void Instructions(RichTextBox info) {}
+        protected Point[] Check_Points(params Point[] P)
+        {
+            if (P[1].X < P[0].X)
+            {
+                int temp = P[1].X;
+                P[1].X = P[0].X;
+                P[0].X = temp;
+            }
+            if (P[1].Y < P[0].Y)
+            {
+                int temp = P[1].Y;
+                P[1].Y = P[0].Y;
+                P[0].Y = temp;
+            }
+            return P; 
+        }
+
+        public abstract void Instructions(RichTextBox info);
 
         public Figure(PictureBox pic) {
             picture = pic;
             pen = new Pen(Color.Black,4);
         }
-
-        protected int GetHypo(int a, int b) { 
-            return (int)Math.Sqrt(Math.Pow(Math.Abs(a), 2) + Math.Pow(Math.Abs(b), 2));
-        }
-
-        public virtual int GetParNum() { return 2; }
 
         public void Clear() { graph.Clear(Color.White); }
     }
