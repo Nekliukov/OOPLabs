@@ -4,7 +4,7 @@ using System.Windows.Forms;
 namespace LR1_Drawing {
     class Line: Figure {
 
-        public Line(PictureBox pic) : base(pic) { }
+        public Line(PictureBox pic, Bitmap bmp) : base(pic, bmp) { }
 
         protected override void Draw(params Point[] points) {
             graph.DrawLine(pen, points[0], points[1]);

@@ -3,7 +3,7 @@ using System.Windows.Forms;
 
 namespace LR1_Drawing {
     class Triangle: Figure  {
-        public Triangle(PictureBox pic) : base(pic) { }
+        public Triangle(PictureBox pic, Bitmap bmp) : base(pic, bmp) { }
 
         public override int PatNum { get { return 3; }  }
 

@@ -4,7 +4,7 @@ using System.Windows.Forms;
 
 namespace LR1_Drawing {
     class Rectangle : Figure {
-        public Rectangle(PictureBox pic) : base(pic) { }
+        public Rectangle(PictureBox pic, Bitmap bmp) : base(pic, bmp) { }
 
         protected override void Draw(params Point[] points) {
             points = Check_Points(points[0], points[1]);

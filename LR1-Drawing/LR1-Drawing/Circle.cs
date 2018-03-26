@@ -4,7 +4,7 @@ using System;
 
 namespace LR1_Drawing {
     class Circle : Figure {
-        public Circle(PictureBox pic) : base(pic) { }
+        public Circle(PictureBox pic, Bitmap bmp) : base(pic, bmp) { }
         
         protected override void Draw(params Point[] points) {
             int radius = GetHypo(points[1].X - points[0].X, points[1].Y - points[0].Y);

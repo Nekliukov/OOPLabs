@@ -7,7 +7,7 @@ namespace LR1_Drawing {
         protected PictureBox picture;
         protected Graphics graph;
         protected Pen pen;
-        public Bitmap bmp;
+        protected Bitmap bmp;
 
         public virtual int PatNum { get { return 2; } }
         
@@ -38,8 +38,9 @@ namespace LR1_Drawing {
 
         public abstract void Instructions(RichTextBox info);
 
-        public Figure(PictureBox pic) {
-            picture = pic;
+        public Figure(PictureBox Pic, Bitmap Bm) {
+            bmp = Bm;
+            picture = Pic;
             pen = new Pen(Color.Black,4);
         }
 
