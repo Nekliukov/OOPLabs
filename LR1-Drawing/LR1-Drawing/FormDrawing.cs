@@ -36,6 +36,7 @@ namespace LR1_Drawing {
                         try { obj.Do_Draw(new Point(x0, y0), new Point(x1, y1), new Point(x2, y2)); }
                         catch { MessageBox.Show("Check points, please!"); return; }                
             }
+            //Clearing coodrinates fields
             tb_x1.Text = tb_x2.Text = tb_y1.Text = tb_y2.Text = tb_x3.Text = tb_y3.Text = "";
         }
 
