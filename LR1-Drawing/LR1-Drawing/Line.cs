@@ -1,16 +1,14 @@
-﻿using System.Drawing;
-using System.Windows.Forms;
+﻿using System;
+using System.Drawing;
 
 namespace LR1_Drawing {
-    class Line: Figure {
+    public class Line: Figure {
 
-        public Line(Pen P) : base(P) { }
+    public Line(): base() { }
+    public Line(Pen P) : base(P) { }
 
-        protected override void Draw(Graphics graph, params Point[] points) {
-            graph.DrawLine(pen, points[0], points[1]);
+        protected override void Draw(Graphics graph) {
+            graph.DrawLine(pen, firstp, secondp);
         }
-
-        public override void Instructions(RichTextBox info) => info.Text =
-            "Just choose two points :) A line will appear between their";
     }
 }

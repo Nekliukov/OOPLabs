@@ -3,17 +3,14 @@ using System.Drawing;
 using System;
 
 namespace LR1_Drawing {
-    class Circle : Figure {
+    public class Circle : Figure {
+        public Circle() : base() { }
         public Circle(Pen P) : base(P) { }
-        
-        protected override void Draw(Graphics graph, params Point[] points) {
-            int radius = GetHypo(points[1].X - points[0].X, points[1].Y - points[0].Y);
-            graph.DrawEllipse(pen, points[0].X - radius, points[0].Y - radius, radius * 2, radius * 2);
-        }
 
-        public override void Instructions(RichTextBox info) => info.Text = "Choose two points. Left one will"+
-            "be the center of the circle, length between left && right = radius";
-   
+        protected override void Draw(Graphics graph) {
+            int radius = GetHypo(secondp.X - firstp.X, secondp.Y - firstp.Y);
+            graph.DrawEllipse(pen, firstp.X - radius, firstp.Y - radius, radius * 2, radius * 2);
+        }
 
         private int GetHypo(int a, int b)
         {

@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<Figure xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Line">
+  <firstp>
+    <X>771</X>
+    <Y>295</Y>
+  </firstp>
+  <secondp>
+    <X>715</X>
+    <Y>365</Y>
+  </secondp>
+</Figure><?xml version="1.0"?>
+<Figure xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Line">
+  <firstp>
+    <X>771</X>
+    <Y>295</Y>
+  </firstp>
+  <secondp>
+    <X>715</X>
+    <Y>365</Y>
+  </secondp>
+</Figure><?xml version="1.0"?>
+<Figure xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Circle">
+  <firstp>
+    <X>767</X>
+    <Y>323</Y>
+  </firstp>
+  <secondp>
+    <X>750</X>
+    <Y>282</Y>
+  </secondp>
+</Figure>

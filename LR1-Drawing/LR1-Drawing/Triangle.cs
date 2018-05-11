@@ -2,18 +2,22 @@
 using System.Windows.Forms;
 
 namespace LR1_Drawing {
-    class Triangle: Figure  {
+    public class Triangle: Figure  {
+        public Triangle() : base() { }
         public Triangle(Pen P) : base(P) { }
+        public Point thirdp;
 
         public override int PatNum { get { return 3; }  }
+        protected override void SetPoints(Point[] Points) {
+            firstp =  Points[0];
+            secondp = Points[1];
+            thirdp =  Points[2];
+        }
 
-        public override void Instructions(RichTextBox info) => info.Text =
-           "Choose three points, lines will be connect with them";
-
-        protected override void Draw(Graphics graph, params Point[] points) {
-            graph.DrawLine(pen, points[0], points[1]);
-            graph.DrawLine(pen, points[1], points[2]);
-            graph.DrawLine(pen, points[2], points[0]);
+        protected override void Draw(Graphics graph) {
+            graph.DrawLine(pen, firstp, secondp);
+            graph.DrawLine(pen, secondp, thirdp);
+            graph.DrawLine(pen, thirdp, firstp);
         }
     }
 }

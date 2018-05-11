@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.IO;
 using System.Windows.Forms;
+using System.Xml.Serialization;
 
 namespace LR1_Drawing {
     public partial class FormDrawing : Form {
@@ -14,43 +16,69 @@ namespace LR1_Drawing {
 
         Graphics graph;
         int x0, y0, x1, y1, x2, y2;
-        public static List<Figure> DisplayedFigures = new List<Figure>();
+
+        //List that contain all displayed figures !!!
+        public List<Figure> DisplayedFigures = new List<Figure>();
+
+        private void button_save_Click(object sender, EventArgs e) {
+            using (var stream = new FileStream("objects.xml", FileMode.Create)) {
+                XmlSerializer XML = new XmlSerializer(typeof(List<Figure>));
+                XML.Serialize(stream, DisplayedFigures);            
+            }
+        }
+
+        private void button_load_Click(object sender, EventArgs e) {
+            DisplayedFigures.Clear();
+            DisplayedFigures = LoadFile();
+            foreach (Figure el in DisplayedFigures)
+                el.DoDraw(graph, el.firstp, el.secondp);
+        }
+
+        public List<Figure> LoadFile() {
+            using (var stream = new FileStream("objects.xml", FileMode.Open)) {
+                XmlSerializer XML = new XmlSerializer(typeof(List<Figure>));
+                return (List<Figure>)XML.Deserialize(stream);
+            }
+        }
 
         private void FormDrawing_Load(object sender, EventArgs e)
         {
             FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             WindowState = FormWindowState.Maximized;
-            foreach (Figure obj in FigureList.figures)
-            {
+            foreach (Figure obj in FigureList.figures){
                 comboBox1.Items.Add(obj.GetType().Name);
             }
         }
 
         // Getting point's coordinates
-        private void button_draw_Click(object sender, EventArgs e)
-        {
-            //Choosing of the figure, that we want to draw
-            foreach (Figure obj in FigureList.figures)
-            {
-                if (obj.GetType().Name == comboBox1.Text)
-                    //Drawing
-                    //if (obj.PatNum == 2)
-                    //obj.Do_Draw(new Point(x0, y0), new Point(x1, y1));
-                    //try {  }
-                    // catch { MessageBox.Show("Check points, please!"); return; }
-                    //else
-                    // { // Case, if we need one more point for drawing (for ex. Triangle)
-                    DisplayedFigures.Add(obj);
-                //try { DisplayedFigures.Do_Draw(new Point(x0, y0), new Point(x1, y1), new Point(x2, y2)); }
-                //
-                //}                
+        private void button_draw_Click(object sender, EventArgs e){
+            try {
+                Convert.ToInt32(tb_x1.Text);
+                Convert.ToInt32(tb_x2.Text);
+                if (comboBox1.Text=="Triangle")
+                    Convert.ToInt32(tb_x3.Text);
             }
-            try { DisplayedFigures[DisplayedFigures.Count - 1].Do_Draw(graph, new Point(x0, y0), new Point(x1, y1)); }
-            catch { MessageBox.Show("Check points, please!"); return; }
+            catch (FormatException) {
+                MessageBox.Show("Wrong Data.Please, check point's locations");
+                return;
+            }
+            //Choosing of the figure, that we want to draw
+            foreach (Figure obj in FigureList.figures){
+                if (obj.GetType().Name == comboBox1.Text) {
+                    int last = DisplayedFigures.Count;
+                    DisplayedFigures.Add(obj);
+                    //Drawing
+                    if (DisplayedFigures[last].PatNum == 2)
+                        DisplayedFigures[last].DoDraw(graph, new Point(x0, y0), new Point(x1, y1));
+                    else
+                        DisplayedFigures[last].DoDraw(graph, new Point(x0, y0), new Point(x1, y1), new Point(x2, y2));                    
+                    break;
+                }
+            }
             tb_x1.Text = tb_x2.Text = tb_y1.Text = tb_y2.Text = tb_x3.Text = tb_y3.Text = "";
             tb_figures.Clear();
             foreach (var el in DisplayedFigures)
-                tb_figures.Text += el.ToString().Substring(12) + Environment.NewLine;       
+                tb_figures.Text += el.ToString().Substring(12) + Environment.NewLine;
         }
 
         private void picture_MouseClick(object sender, MouseEventArgs e) {
@@ -79,19 +107,14 @@ namespace LR1_Drawing {
             }
         }
 
-        // Refreshing textboxes coordinates, loading of the current figure's instructions 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e) {
             tb_x1.Text = tb_x2.Text = tb_y1.Text = tb_y2.Text = tb_x3.Text = tb_y3.Text = "";
-            foreach (Figure obj in FigureList.figures) {
-                if (obj.GetType().Name == comboBox1.Text) {
-                    obj.Instructions(rtb_info);
-                }
-            }
         }
 
-        //Wierd realisation of bitmap's clearing 
+        //Canvas and current figures list clearing
         private void button_clean_Click(object sender, EventArgs e){
             graph.Clear(Color.White);
+            tb_figures.Clear();
             DisplayedFigures.Clear();
         }
     }
