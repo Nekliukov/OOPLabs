@@ -3,9 +3,9 @@ using System.Windows.Forms;
 
 namespace LR1_Drawing {
     class Rhombus: Figure {
-        public Rhombus(PictureBox pic, Bitmap bmp) : base(pic, bmp) { }
+        public Rhombus(Pen P) : base(P) { }
 
-        protected override void Draw(params Point[] points) {
+        protected override void Draw(Graphics graph, params Point[] points) {
             points = Check_Points(points[0], points[1]);
             graph.DrawLine(pen, points[0], points[1]);
             graph.DrawLine(pen, points[1].X, points[1].Y, points[0].X, points[0].Y-(points[0].Y-points[1].Y)*2);

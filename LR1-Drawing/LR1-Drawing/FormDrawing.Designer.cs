@@ -43,6 +43,8 @@
             this.rtb_info = new System.Windows.Forms.RichTextBox();
             this.label_instr = new System.Windows.Forms.Label();
             this.label_choice = new System.Windows.Forms.Label();
+            this.tb_figures = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picture)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -62,7 +64,7 @@
             // 
             this.button_draw.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.button_draw.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button_draw.Location = new System.Drawing.Point(1149, 121);
+            this.button_draw.Location = new System.Drawing.Point(905, 121);
             this.button_draw.Name = "button_draw";
             this.button_draw.Size = new System.Drawing.Size(188, 47);
             this.button_draw.TabIndex = 1;
@@ -150,6 +152,8 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.tb_figures);
             this.panel1.Controls.Add(this.button_clean);
             this.panel1.Controls.Add(this.tb_y3);
             this.panel1.Controls.Add(this.label_y3);
@@ -179,7 +183,7 @@
             // 
             this.button_clean.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.button_clean.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button_clean.Location = new System.Drawing.Point(1149, 34);
+            this.button_clean.Location = new System.Drawing.Point(905, 34);
             this.button_clean.Name = "button_clean";
             this.button_clean.Size = new System.Drawing.Size(188, 47);
             this.button_clean.TabIndex = 24;
@@ -226,7 +230,7 @@
             this.rtb_info.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.rtb_info.Location = new System.Drawing.Point(278, 34);
             this.rtb_info.Name = "rtb_info";
-            this.rtb_info.Size = new System.Drawing.Size(841, 137);
+            this.rtb_info.Size = new System.Drawing.Size(586, 137);
             this.rtb_info.TabIndex = 19;
             this.rtb_info.Text = "Just choose two points :) A line will appear between their.";
             // 
@@ -249,6 +253,24 @@
             this.label_choice.Size = new System.Drawing.Size(153, 20);
             this.label_choice.TabIndex = 16;
             this.label_choice.Text = "Choose figure\'s type";
+            // 
+            // tb_figures
+            // 
+            this.tb_figures.Location = new System.Drawing.Point(1149, 35);
+            this.tb_figures.Multiline = true;
+            this.tb_figures.Name = "tb_figures";
+            this.tb_figures.Size = new System.Drawing.Size(209, 133);
+            this.tb_figures.TabIndex = 25;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Location = new System.Drawing.Point(1145, 7);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(66, 20);
+            this.label1.TabIndex = 26;
+            this.label1.Text = "Figures:";
             // 
             // FormDrawing
             // 
@@ -290,6 +312,8 @@
         private System.Windows.Forms.Label label_x3;
         private System.Windows.Forms.TextBox tb_x3;
         private System.Windows.Forms.Button button_clean;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox tb_figures;
     }
 }
 

@@ -4,19 +4,15 @@ using System;
 
 namespace LR1_Drawing {
     public abstract class Figure {
-        protected PictureBox picture;
-        protected Graphics graph;
         protected Pen pen;
-        protected Bitmap bmp;
 
         public virtual int PatNum { get { return 2; } }
         
-        protected abstract void Draw(params Point[] points);
+        protected abstract void Draw(Graphics graph, params Point[] points);
 
-        public void Do_Draw(params Point[] points) {
-            graph = Graphics.FromImage(bmp);
-            Draw(points);
-            picture.Image = bmp;
+        public void Do_Draw(Graphics graph, params Point[] points) {
+            //graph = Graphics.FromImage(bmp);
+            Draw(graph, points);
         }
 
         protected Point[] Check_Points(params Point[] P)
@@ -38,12 +34,10 @@ namespace LR1_Drawing {
 
         public abstract void Instructions(RichTextBox info);
 
-        public Figure(PictureBox Pic, Bitmap Bm) {
-            bmp = Bm;
-            picture = Pic;
-            pen = new Pen(Color.Black,4);
+        public Figure(Pen P) {
+            pen = P;
         }
 
-        public void Clear() { graph.Clear(Color.White); }
+        public void Clear() {  }
     }
 }

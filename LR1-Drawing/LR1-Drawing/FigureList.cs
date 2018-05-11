@@ -8,13 +8,13 @@ namespace LR1_Drawing {
 
         public static List<Object> figures = new List<Object>();
 
-        public static void LoadFigures(PictureBox picture, Bitmap bm) {
-            figures.Add(new Line(picture, bm));
-            figures.Add(new Rectangle(picture, bm));
-            figures.Add(new Circle(picture, bm));
-            figures.Add(new Ellipse(picture, bm));
-            figures.Add(new Triangle(picture, bm));
-            figures.Add(new Rhombus(picture,bm));
+        public static void LoadFigures(Pen p) {
+            figures.Add(new Line(p));
+            figures.Add(new Rectangle(p));
+            figures.Add(new Circle(p));
+            figures.Add(new Ellipse(p));
+            figures.Add(new Triangle(p));
+            figures.Add(new Rhombus(p));
         }
     }
 }

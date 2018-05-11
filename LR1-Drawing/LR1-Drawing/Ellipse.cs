@@ -4,9 +4,9 @@ using System.Windows.Forms;
 
 namespace LR1_Drawing {
     class Ellipse : Figure {
-        public Ellipse(PictureBox pic, Bitmap bmp) : base(pic, bmp) { }
+        public Ellipse(Pen P) : base(P) { }
 
-        protected override void Draw(params Point[] points) {
+        protected override void Draw(Graphics graph, params Point[] points) {
             points = Check_Points(points[0], points[1]);
             float width = Math.Abs(points[0].X - points[1].X);
             float height = Math.Abs(points[0].Y - points[1].Y);
