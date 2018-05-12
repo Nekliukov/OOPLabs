@@ -1,31 +1,55 @@
 <?xml version="1.0"?>
-<Figure xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Line">
-  <firstp>
-    <X>771</X>
-    <Y>295</Y>
-  </firstp>
-  <secondp>
-    <X>715</X>
-    <Y>365</Y>
-  </secondp>
-</Figure><?xml version="1.0"?>
-<Figure xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Line">
-  <firstp>
-    <X>771</X>
-    <Y>295</Y>
-  </firstp>
-  <secondp>
-    <X>715</X>
-    <Y>365</Y>
-  </secondp>
-</Figure><?xml version="1.0"?>
-<Figure xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Circle">
-  <firstp>
-    <X>767</X>
-    <Y>323</Y>
-  </firstp>
-  <secondp>
-    <X>750</X>
-    <Y>282</Y>
-  </secondp>
-</Figure>
+<ArrayOfFigure xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Figure xsi:type="Line">
+    <color>-4338208</color>
+    <thikness>8</thikness>
+    <firstp>
+      <X>361</X>
+      <Y>301</Y>
+    </firstp>
+    <secondp>
+      <X>955</X>
+      <Y>309</Y>
+    </secondp>
+  </Figure>
+  <Figure xsi:type="Triangle">
+    <color>-16744193</color>
+    <thikness>8</thikness>
+    <firstp>
+      <X>490</X>
+      <Y>249</Y>
+    </firstp>
+    <secondp>
+      <X>759</X>
+      <Y>22</Y>
+    </secondp>
+    <thirdp>
+      <X>792</X>
+      <Y>215</Y>
+    </thirdp>
+  </Figure>
+  <Figure xsi:type="Line">
+    <color>-16744193</color>
+    <thikness>1</thikness>
+    <firstp>
+      <X>415</X>
+      <Y>77</Y>
+    </firstp>
+    <secondp>
+      <X>707</X>
+      <Y>536</Y>
+    </secondp>
+  </Figure>
+  <Figure xsi:type="Circle">
+    <color>-12582784</color>
+    <thikness>12</thikness>
+    <firstp>
+      <X>776</X>
+      <Y>402</Y>
+    </firstp>
+    <secondp>
+      <X>932</X>
+      <Y>312</Y>
+    </secondp>
+  </Figure>
+</ArrayOfFigure>

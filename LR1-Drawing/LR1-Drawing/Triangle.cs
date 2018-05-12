@@ -1,10 +1,9 @@
-﻿using System.Drawing;
-using System.Windows.Forms;
+﻿using System;
+using System.Drawing;
 
 namespace LR1_Drawing {
     public class Triangle: Figure  {
         public Triangle() : base() { }
-        public Triangle(Pen P) : base(P) { }
         public Point thirdp;
 
         public override int PatNum { get { return 3; }  }

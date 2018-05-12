@@ -5,7 +5,6 @@ using System.Windows.Forms;
 namespace LR1_Drawing {
     public class Ellipse : Figure {
         public Ellipse() : base() { }
-        public Ellipse(Pen P) : base(P) { }
 
         protected override void Draw(Graphics graph) {
             Check_Points(ref firstp, ref secondp);

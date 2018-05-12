@@ -9,9 +9,17 @@ namespace LR1_Drawing {
     public partial class FormDrawing : Form {
         public FormDrawing() {
             InitializeComponent();
-            FigureList.LoadFigures(new Pen(Color.Black, 3));
+            FigureList.LoadFigures();
             comboBox1.Text = FigureList.figures[0].GetType().Name;
             graph = picture.CreateGraphics();
+
+            cb_thikness.Items.Add(1);
+            cb_thikness.Items.Add(2);
+            cb_thikness.Items.Add(4);
+            cb_thikness.Items.Add(6);
+            cb_thikness.Items.Add(8);
+            cb_thikness.Items.Add(10);
+            cb_thikness.Items.Add(12);
         }
 
         Graphics graph;
@@ -29,25 +37,68 @@ namespace LR1_Drawing {
 
         private void button_load_Click(object sender, EventArgs e) {
             DisplayedFigures.Clear();
-            DisplayedFigures = LoadFile();
-            foreach (Figure el in DisplayedFigures)
-                el.DoDraw(graph, el.firstp, el.secondp);
+            graph.Clear(Color.White);
+            lb_figures.Items.Clear();
+            try {
+                DisplayedFigures = LoadFile();
+                foreach (Figure el in DisplayedFigures) {
+                    el.DoDraw(graph);
+                    lb_figures.Items.Add(el.GetType().Name);
+                }
+            }
+            catch { MessageBox.Show("Error. Cannot read the file"); }
         }
 
         public List<Figure> LoadFile() {
             using (var stream = new FileStream("objects.xml", FileMode.Open)) {
                 XmlSerializer XML = new XmlSerializer(typeof(List<Figure>));
-                return (List<Figure>)XML.Deserialize(stream);
+                return (List<Figure>)XML.Deserialize(stream);             
             }
+        }
+
+        private void lb_figures_KeyPress(object sender, KeyPressEventArgs e) {
+            if (lb_figures.SelectedIndex != -1) {
+                if (e.KeyChar == (Char)Keys.Back) {
+                    DisplayedFigures.RemoveAt(lb_figures.SelectedIndex);
+                    lb_figures.Items.Remove(lb_figures.SelectedItem);
+                    //Refresh canvas after deleting
+                    graph.Clear(Color.White);
+                    foreach (Figure el in DisplayedFigures)
+                        el.DoDraw(graph);
+                }
+            }
+        }
+
+        private void button_color_Click(object sender, EventArgs e) {
+            ColorDialog cd = new ColorDialog();
+            cd.AllowFullOpen = false;
+            if (cd.ShowDialog() == DialogResult.OK) {
+                button_color.BackColor = cd.Color;
+                if (lb_figures.SelectedIndex != -1) {
+                    DisplayedFigures[lb_figures.SelectedIndex].color = cd.Color.ToArgb();
+                    graph.Clear(Color.White);
+                    foreach (Figure el in DisplayedFigures)
+                        el.DoDraw(graph);
+                }
+            }
+        }
+
+        private void cb_thikness_SelectedIndexChanged(object sender, EventArgs e) {
+                if (lb_figures.SelectedIndex != -1) {
+                    DisplayedFigures[lb_figures.SelectedIndex].thikness =
+                        Convert.ToInt32(cb_thikness.Text);
+                    graph.Clear(Color.White);
+                    foreach (Figure el in DisplayedFigures)
+                        el.DoDraw(graph);
+                }
         }
 
         private void FormDrawing_Load(object sender, EventArgs e)
         {
-            FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            WindowState = FormWindowState.Maximized;
             foreach (Figure obj in FigureList.figures){
                 comboBox1.Items.Add(obj.GetType().Name);
             }
+            cb_thikness.Text = "1";
         }
 
         // Getting point's coordinates
@@ -66,7 +117,9 @@ namespace LR1_Drawing {
             foreach (Figure obj in FigureList.figures){
                 if (obj.GetType().Name == comboBox1.Text) {
                     int last = DisplayedFigures.Count;
-                    DisplayedFigures.Add(obj);
+                    DisplayedFigures.Add((Figure)obj.Clone(
+                        button_color.BackColor.ToArgb(),
+                        Convert.ToInt32(cb_thikness.Text)));
                     //Drawing
                     if (DisplayedFigures[last].PatNum == 2)
                         DisplayedFigures[last].DoDraw(graph, new Point(x0, y0), new Point(x1, y1));
@@ -76,11 +129,12 @@ namespace LR1_Drawing {
                 }
             }
             tb_x1.Text = tb_x2.Text = tb_y1.Text = tb_y2.Text = tb_x3.Text = tb_y3.Text = "";
-            tb_figures.Clear();
+            lb_figures.Items.Clear();
             foreach (var el in DisplayedFigures)
-                tb_figures.Text += el.ToString().Substring(12) + Environment.NewLine;
+                lb_figures.Items.Add(el.GetType().Name);
         }
 
+        //Getting mouse coodrdinates
         private void picture_MouseClick(object sender, MouseEventArgs e) {
             int X = e.Location.X, Y = e.Location.Y;
             if (tb_x1.Text == "") {
@@ -114,7 +168,7 @@ namespace LR1_Drawing {
         //Canvas and current figures list clearing
         private void button_clean_Click(object sender, EventArgs e){
             graph.Clear(Color.White);
-            tb_figures.Clear();
+            lb_figures.Items.Clear();
             DisplayedFigures.Clear();
         }
     }

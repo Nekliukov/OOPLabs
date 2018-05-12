@@ -5,7 +5,6 @@ using System;
 namespace LR1_Drawing {
     public class Circle : Figure {
         public Circle() : base() { }
-        public Circle(Pen P) : base(P) { }
 
         protected override void Draw(Graphics graph) {
             int radius = GetHypo(secondp.X - firstp.X, secondp.Y - firstp.Y);

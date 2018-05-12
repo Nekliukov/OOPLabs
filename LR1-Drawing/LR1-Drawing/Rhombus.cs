@@ -1,10 +1,9 @@
-﻿using System.Drawing;
-using System.Windows.Forms;
+﻿using System;
+using System.Drawing;
 
 namespace LR1_Drawing {
     public class Rhombus: Figure {
         public Rhombus() : base() { }
-        public Rhombus(Pen P) : base(P) { }
 
         protected override void Draw(Graphics graph) {
             Check_Points(ref firstp, ref secondp);

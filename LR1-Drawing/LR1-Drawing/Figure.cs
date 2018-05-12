@@ -12,7 +12,11 @@ namespace LR1_Drawing {
     [XmlInclude(typeof(Rhombus))]
     [XmlInclude(typeof(Triangle))]
     public abstract class Figure {
-        protected Pen pen = new Pen(Color.Black, 2);
+        protected Pen pen;
+        // XML cannot convert Color type, so the solution
+        // is to convert it to Int32 every time u create figure
+        public Int32 color;
+        public Int32 thikness;
         public Point firstp, secondp;
 
         //Number of points for each figure (2 is default)
@@ -22,6 +26,7 @@ namespace LR1_Drawing {
 
         //First time when we drawing figures
         public void DoDraw(Graphics g, params Point[] p) {
+            pen = new Pen(Color.FromArgb(color), thikness);
             SetPoints(p);
             Draw(g);
         }
@@ -29,6 +34,7 @@ namespace LR1_Drawing {
         //Drawing method, when we using deserialisation
         //Here we already have all points, just need to draw figures again
         public void DoDraw(Graphics g) {
+            pen = new Pen(Color.FromArgb(color), thikness);
             Draw(g);
         }
 
@@ -37,6 +43,7 @@ namespace LR1_Drawing {
             secondp = Points[1];
         }
 
+        //Solving of problem with figure's mirror displaying 
         protected void Check_Points(ref Point P0, ref Point P1) {
             if (P1.X < P0.X) {
                 int temp = P1.X;
@@ -51,9 +58,12 @@ namespace LR1_Drawing {
         }
 
         // Constructor without params for XML Serialisation
-        public Figure() { }
-        public Figure(Pen P) {
-            pen = P;
+        public Figure() {}
+
+        public object Clone(Int32 C, Int32 T) {
+            color = C;
+            thikness = T;
+            return this.MemberwiseClone();
         }
     }
 }
