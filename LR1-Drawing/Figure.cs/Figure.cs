@@ -1,40 +1,42 @@
-﻿using System.Windows.Forms;
-using System.Drawing;
+﻿using System.Drawing;
 using System;
 using System.Xml.Serialization;
 using System.Collections.Generic;
+using System.Xml;
 
-namespace LR1_Drawing {
-    [XmlInclude(typeof(Line))]
-    [XmlInclude(typeof(Rectangle))]
-    [XmlInclude(typeof(Circle))]
-    [XmlInclude(typeof(Ellipse))]
-    [XmlInclude(typeof(Rhombus))]
-    [XmlInclude(typeof(Triangle))]
+namespace FigureClassLibrary {
+    //[Serializable]
+    //[XmlInclude(typeof(Line))]
+    //[XmlInclude(typeof(Rectangle))]
+    //[XmlInclude(typeof(Circle))]
+    //[XmlInclude(typeof(Ellipse))]
+    //[XmlInclude(typeof(Rhombus))]
+    //[XmlInclude(typeof(Triangle))]
     public abstract class Figure {
         protected Pen pen;
         // XML cannot convert Color type, so the solution
         // is to convert it to Int32 every time u create figure
-        public Int32 color;
-        public Int32 thikness;
         public Point firstp, secondp;
+        public Int32 BrushColor { get; set; }
+        public Int32 BrushThikness { get; set; }
 
         //Number of points for each figure (2 is default)
-        public virtual int PatNum { get { return 2; } }
+        public virtual Int32 PatNum { get { return 2; } }
 
         protected abstract void Draw(Graphics graph);
 
         //First time when we drawing figures
         public void DoDraw(Graphics g, params Point[] p) {
-            pen = new Pen(Color.FromArgb(color), thikness);
+            pen = new Pen(System.Drawing.Color.FromArgb(BrushColor), BrushThikness);
             SetPoints(p);
             Draw(g);
         }
 
+
         //Drawing method, when we using deserialisation
         //Here we already have all points, just need to draw figures again
         public void DoDraw(Graphics g) {
-            pen = new Pen(Color.FromArgb(color), thikness);
+            pen = new Pen(System.Drawing.Color.FromArgb(BrushColor), BrushThikness);
             Draw(g);
         }
 
@@ -61,9 +63,13 @@ namespace LR1_Drawing {
         public Figure() {}
 
         public object Clone(Int32 C, Int32 T) {
-            color = C;
-            thikness = T;
+            BrushColor = C;
+            BrushThikness = T;
             return this.MemberwiseClone();
         }
+    }
+
+    public interface ISerializeable
+    {
     }
 }

@@ -1,0 +1,5 @@
+D:\github\OOPLabs\LR1-Drawing\Circle\obj\Debug\CircleClassLibrary.csprojResolveAssemblyReference.cache
+D:\github\OOPLabs\LR1-Drawing\LR1-Drawing\bin\Debug\CircleClassLibrary.dll
+D:\github\OOPLabs\LR1-Drawing\LR1-Drawing\bin\Debug\CircleClassLibrary.pdb
+D:\github\OOPLabs\LR1-Drawing\Circle\obj\Debug\CircleClassLibrary.dll
+D:\github\OOPLabs\LR1-Drawing\Circle\obj\Debug\CircleClassLibrary.pdb

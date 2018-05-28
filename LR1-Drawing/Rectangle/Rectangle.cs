@@ -1,16 +1,17 @@
 ﻿using System;
 using System.Drawing;
-using System.Windows.Forms;
+using FigureClassLibrary;
 
-namespace LR1_Drawing {
-    public class Ellipse : Figure {
-        public Ellipse() : base() { }
+namespace RectangleClassLibrary
+{
+    public class Rectangle : Figure {
+        public Rectangle() : base() { }
 
         protected override void Draw(Graphics graph) {
             Check_Points(ref firstp, ref secondp);
             float width = Math.Abs(firstp.X - secondp.X);
             float height = Math.Abs(firstp.Y - secondp.Y);
-            graph.DrawEllipse(pen, firstp.X, firstp.Y, width, height);
+            graph.DrawRectangle(pen, firstp.X, firstp.Y, width, height);
         }
     }
 }

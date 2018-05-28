@@ -1,0 +1,5 @@
+D:\github\OOPLabs\LR1-Drawing\Line\obj\Debug\LineClassLibrary.csprojResolveAssemblyReference.cache
+D:\github\OOPLabs\LR1-Drawing\LR1-Drawing\bin\Debug\LineClassLibrary.dll
+D:\github\OOPLabs\LR1-Drawing\LR1-Drawing\bin\Debug\LineClassLibrary.pdb
+D:\github\OOPLabs\LR1-Drawing\Line\obj\Debug\LineClassLibrary.dll
+D:\github\OOPLabs\LR1-Drawing\Line\obj\Debug\LineClassLibrary.pdb

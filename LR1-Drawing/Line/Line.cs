@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Drawing;
+using FigureClassLibrary;
 
-namespace LR1_Drawing {
+namespace LineClassLibrary
+{
     public class Line: Figure {
 
     public Line(): base() { }

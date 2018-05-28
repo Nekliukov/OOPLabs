@@ -1,8 +1,8 @@
-﻿using System.Windows.Forms;
-using System.Drawing;
+﻿using System.Drawing;
 using System;
+using FigureClassLibrary;
 
-namespace LR1_Drawing {
+namespace CircleClassLibrary {
     public class Circle : Figure {
         public Circle() : base() { }
 

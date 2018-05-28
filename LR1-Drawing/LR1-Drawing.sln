@@ -1,9 +1,23 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26730.16
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LR1-Drawing", "LR1-Drawing\LR1-Drawing.csproj", "{A05AC94B-E4E5-4C6F-8C88-E9F4B0EE379B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FigureClassLibrary", "Figure.cs\FigureClassLibrary.csproj", "{042021E8-FDCD-4AE6-8E72-EF6D2D5DCCAD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LineClassLibrary", "Line\LineClassLibrary.csproj", "{AC3199E5-63BF-4228-B57F-C559C23BCB16}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CircleClassLibrary", "Circle\CircleClassLibrary.csproj", "{9A31EAD0-5608-4091-B8CB-F1B082154592}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EllipseClassLibrary", "Ellipse\EllipseClassLibrary.csproj", "{523B4A7B-4672-4F3B-A6AE-04599BEBDEE8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RectangleClassLibrary", "Rectangle\RectangleClassLibrary.csproj", "{E8697391-7277-4021-A915-100C6F36DE2A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RhombusClassLibrary", "Rhombus\RhombusClassLibrary.csproj", "{96724E75-17D2-4B77-BFB4-AB98148CC7FE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TriangleClassLibrary", "Triangle\TriangleClassLibrary.csproj", "{E32BB156-87D4-40D1-8C3F-34D5B7A1A02C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +29,34 @@ Global
 		{A05AC94B-E4E5-4C6F-8C88-E9F4B0EE379B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A05AC94B-E4E5-4C6F-8C88-E9F4B0EE379B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A05AC94B-E4E5-4C6F-8C88-E9F4B0EE379B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{042021E8-FDCD-4AE6-8E72-EF6D2D5DCCAD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{042021E8-FDCD-4AE6-8E72-EF6D2D5DCCAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{042021E8-FDCD-4AE6-8E72-EF6D2D5DCCAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{042021E8-FDCD-4AE6-8E72-EF6D2D5DCCAD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC3199E5-63BF-4228-B57F-C559C23BCB16}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC3199E5-63BF-4228-B57F-C559C23BCB16}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC3199E5-63BF-4228-B57F-C559C23BCB16}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC3199E5-63BF-4228-B57F-C559C23BCB16}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9A31EAD0-5608-4091-B8CB-F1B082154592}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A31EAD0-5608-4091-B8CB-F1B082154592}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A31EAD0-5608-4091-B8CB-F1B082154592}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A31EAD0-5608-4091-B8CB-F1B082154592}.Release|Any CPU.Build.0 = Release|Any CPU
+		{523B4A7B-4672-4F3B-A6AE-04599BEBDEE8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{523B4A7B-4672-4F3B-A6AE-04599BEBDEE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{523B4A7B-4672-4F3B-A6AE-04599BEBDEE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{523B4A7B-4672-4F3B-A6AE-04599BEBDEE8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E8697391-7277-4021-A915-100C6F36DE2A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E8697391-7277-4021-A915-100C6F36DE2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E8697391-7277-4021-A915-100C6F36DE2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E8697391-7277-4021-A915-100C6F36DE2A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{96724E75-17D2-4B77-BFB4-AB98148CC7FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{96724E75-17D2-4B77-BFB4-AB98148CC7FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{96724E75-17D2-4B77-BFB4-AB98148CC7FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{96724E75-17D2-4B77-BFB4-AB98148CC7FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E32BB156-87D4-40D1-8C3F-34D5B7A1A02C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E32BB156-87D4-40D1-8C3F-34D5B7A1A02C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E32BB156-87D4-40D1-8C3F-34D5B7A1A02C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E32BB156-87D4-40D1-8C3F-34D5B7A1A02C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

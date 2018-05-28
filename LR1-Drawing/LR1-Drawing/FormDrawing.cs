@@ -1,7 +1,9 @@
-﻿using System;
+﻿using FigureClassLibrary;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
+using System.Reflection;
 using System.Windows.Forms;
 using System.Xml.Serialization;
 
@@ -9,9 +11,11 @@ namespace LR1_Drawing {
     public partial class FormDrawing : Form {
         public FormDrawing() {
             InitializeComponent();
-            FigureList.LoadFigures();
+            AddPlugins();
             comboBox1.Text = FigureList.figures[0].GetType().Name;
             graph = picture.CreateGraphics();
+
+            List<Figure> knownTypes = new List<Figure>();
 
             cb_thikness.Items.Add(1);
             cb_thikness.Items.Add(2);
@@ -20,6 +24,8 @@ namespace LR1_Drawing {
             cb_thikness.Items.Add(8);
             cb_thikness.Items.Add(10);
             cb_thikness.Items.Add(12);
+
+
         }
 
         Graphics graph;
@@ -54,6 +60,8 @@ namespace LR1_Drawing {
                 XmlSerializer XML = new XmlSerializer(typeof(List<Figure>));
                 return (List<Figure>)XML.Deserialize(stream);             
             }
+
+           
         }
 
         private void lb_figures_KeyPress(object sender, KeyPressEventArgs e) {
@@ -75,7 +83,7 @@ namespace LR1_Drawing {
             if (cd.ShowDialog() == DialogResult.OK) {
                 button_color.BackColor = cd.Color;
                 if (lb_figures.SelectedIndex != -1) {
-                    DisplayedFigures[lb_figures.SelectedIndex].color = cd.Color.ToArgb();
+                    DisplayedFigures[lb_figures.SelectedIndex].BrushColor = cd.Color.ToArgb();
                     graph.Clear(Color.White);
                     foreach (Figure el in DisplayedFigures)
                         el.DoDraw(graph);
@@ -85,7 +93,7 @@ namespace LR1_Drawing {
 
         private void cb_thikness_SelectedIndexChanged(object sender, EventArgs e) {
                 if (lb_figures.SelectedIndex != -1) {
-                    DisplayedFigures[lb_figures.SelectedIndex].thikness =
+                    DisplayedFigures[lb_figures.SelectedIndex].BrushThikness =
                         Convert.ToInt32(cb_thikness.Text);
                     graph.Clear(Color.White);
                     foreach (Figure el in DisplayedFigures)
@@ -170,6 +178,30 @@ namespace LR1_Drawing {
             graph.Clear(Color.White);
             lb_figures.Items.Clear();
             DisplayedFigures.Clear();
+        }
+
+        public void AddPlugins() {
+            String AddInDir = Path.GetDirectoryName(Assembly.GetEntryAssembly().Location);
+            var AddInAssemblies = Directory.EnumerateFiles(AddInDir, "*Library.dll");
+
+            foreach (var ass in AddInAssemblies) {
+                try {
+                    Assembly assembly = Assembly.LoadFrom(ass);
+                    Type[] types = assembly.GetExportedTypes();
+                    foreach (var type in types){
+                        if (type.IsClass && type.GetTypeInfo().BaseType == typeof(
+                            Figure) && !type.IsAbstract) {
+                            var plugin = Activator.CreateInstance(type);
+                            FigureList.figures.Add((Figure)plugin);
+                        }
+                    }
+                }
+                catch (Exception ex) {
+                    MessageBoxButtons button = MessageBoxButtons.OK;
+                    string caption = "Error";
+                    MessageBox.Show(ex.Message, caption, button);
+                }
+            }
         }
     }
 }

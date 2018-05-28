@@ -27,3 +27,4 @@ D:\git_projects\OOPLabs\LR1-Drawing\LR1-Drawing\obj\Debug\LR1-Drawing.csproj.Gen
 D:\git_projects\OOPLabs\LR1-Drawing\LR1-Drawing\obj\Debug\LR1-Drawing.csproj.CoreCompileInputs.cache
 D:\git_projects\OOPLabs\LR1-Drawing\LR1-Drawing\obj\Debug\LR1-Drawing.exe
 D:\git_projects\OOPLabs\LR1-Drawing\LR1-Drawing\obj\Debug\LR1-Drawing.pdb
+D:\github\OOPLabs\LR1-Drawing\LR1-Drawing\bin\Debug\FigureClassLibrary.pdb

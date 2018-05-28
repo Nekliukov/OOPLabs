@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Drawing;
+using FigureClassLibrary;
 
-namespace LR1_Drawing {
+namespace TriangleClassLibrary
+{
     public class Triangle: Figure  {
         public Triangle() : base() { }
         public Point thirdp;

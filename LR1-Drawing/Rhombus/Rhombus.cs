@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Drawing;
+using FigureClassLibrary;
 
-namespace LR1_Drawing {
+namespace RhombusClassLibrary
+{
     public class Rhombus: Figure {
         public Rhombus() : base() { }
 

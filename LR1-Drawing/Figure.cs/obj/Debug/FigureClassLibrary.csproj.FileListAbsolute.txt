@@ -1,0 +1,5 @@
+D:\github\OOPLabs\LR1-Drawing\Figure.cs\obj\Debug\FigureClassLibrary.csprojResolveAssemblyReference.cache
+D:\github\OOPLabs\LR1-Drawing\LR1-Drawing\bin\Debug\FigureClassLibrary.dll
+D:\github\OOPLabs\LR1-Drawing\LR1-Drawing\bin\Debug\FigureClassLibrary.pdb
+D:\github\OOPLabs\LR1-Drawing\Figure.cs\obj\Debug\FigureClassLibrary.dll
+D:\github\OOPLabs\LR1-Drawing\Figure.cs\obj\Debug\FigureClassLibrary.pdb
