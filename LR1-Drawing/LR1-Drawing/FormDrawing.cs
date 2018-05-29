@@ -15,8 +15,6 @@ namespace LR1_Drawing {
             comboBox1.Text = FigureList.figures[0].GetType().Name;
             graph = picture.CreateGraphics();
 
-            List<Figure> knownTypes = new List<Figure>();
-
             cb_thikness.Items.Add(1);
             cb_thikness.Items.Add(2);
             cb_thikness.Items.Add(4);
@@ -25,6 +23,25 @@ namespace LR1_Drawing {
             cb_thikness.Items.Add(10);
             cb_thikness.Items.Add(12);
 
+
+            Configuration confSt = new Configuration();
+            using (var stream = new FileStream("config.xml", FileMode.Open))
+            {
+                XmlSerializer XML = new XmlSerializer(typeof(Configuration));
+                confSt = (Configuration)XML.Deserialize(stream);
+                picture.BackColor = System.Drawing.Color.FromArgb(confSt.backgroundcolor);
+                panel1.BackColor = System.Drawing.Color.FromArgb(confSt.menucolor);
+                Configuration langConf = new Configuration();
+                langConf.ChangeLanguge(menuStrip1, panel1, comboBox1,
+                                    menuStrip1.Items, confSt.language);
+            }
+            back_cd.Color = picture.BackColor;
+
+            foreach (ToolStripItem c in menuStrip1.Items) 
+            {
+               if (c is ToolStripMenuItem)
+                MessageBox.Show(c.Text);
+            }
 
         }
 
@@ -43,7 +60,7 @@ namespace LR1_Drawing {
 
         private void button_load_Click(object sender, EventArgs e) {
             DisplayedFigures.Clear();
-            graph.Clear(Color.White);
+            graph.Clear(picture.BackColor);
             lb_figures.Items.Clear();
             try {
                 DisplayedFigures = LoadFile();
@@ -60,8 +77,6 @@ namespace LR1_Drawing {
                 XmlSerializer XML = new XmlSerializer(typeof(List<Figure>));
                 return (List<Figure>)XML.Deserialize(stream);             
             }
-
-           
         }
 
         private void lb_figures_KeyPress(object sender, KeyPressEventArgs e) {
@@ -70,7 +85,7 @@ namespace LR1_Drawing {
                     DisplayedFigures.RemoveAt(lb_figures.SelectedIndex);
                     lb_figures.Items.Remove(lb_figures.SelectedItem);
                     //Refresh canvas after deleting
-                    graph.Clear(Color.White);
+                    graph.Clear(picture.BackColor);
                     foreach (Figure el in DisplayedFigures)
                         el.DoDraw(graph);
                 }
@@ -84,7 +99,7 @@ namespace LR1_Drawing {
                 button_color.BackColor = cd.Color;
                 if (lb_figures.SelectedIndex != -1) {
                     DisplayedFigures[lb_figures.SelectedIndex].BrushColor = cd.Color.ToArgb();
-                    graph.Clear(Color.White);
+                    graph.Clear(picture.BackColor);
                     foreach (Figure el in DisplayedFigures)
                         el.DoDraw(graph);
                 }
@@ -95,18 +110,66 @@ namespace LR1_Drawing {
                 if (lb_figures.SelectedIndex != -1) {
                     DisplayedFigures[lb_figures.SelectedIndex].BrushThikness =
                         Convert.ToInt32(cb_thikness.Text);
-                    graph.Clear(Color.White);
+                    graph.Clear(picture.BackColor);
                     foreach (Figure el in DisplayedFigures)
                         el.DoDraw(graph);
                 }
         }
-
+        
         private void FormDrawing_Load(object sender, EventArgs e)
         {
             foreach (Figure obj in FigureList.figures){
                 comboBox1.Items.Add(obj.GetType().Name);
             }
             cb_thikness.Text = "1";
+        }
+
+        Configuration cnflang = new Configuration();
+        private void englishToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            cnflang.ChangeLanguge(menuStrip1, panel1, comboBox1,
+                                menuStrip1.Items, 0);
+        }
+
+        private void germanyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            cnflang.ChangeLanguge(menuStrip1, panel1, comboBox1,
+                                menuStrip1.Items, 1);
+        }
+
+        private void FormDrawing_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Configuration conf = new Configuration();
+            conf.backgroundcolor = back_cd.Color.ToArgb();
+            conf.menucolor = panel1.BackColor.ToArgb();
+            conf.language = cnflang.language;
+            using (var stream = new FileStream("config.xml", FileMode.Create))
+            {
+                XmlSerializer XML = new XmlSerializer(typeof(Configuration));
+                XML.Serialize(stream, conf);
+            }
+        }
+
+        ColorDialog back_cd = new ColorDialog();
+        private void backgroundColorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            back_cd.AllowFullOpen = false;
+            if (back_cd.ShowDialog() == DialogResult.OK)
+            {
+                graph.Clear(back_cd.Color);
+                foreach (Figure el in DisplayedFigures)
+                    el.DoDraw(graph);
+            }
+            
+
+        }
+
+        private void menuColorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ColorDialog cd = new ColorDialog();
+            cd.AllowFullOpen = false;
+            if (cd.ShowDialog() == DialogResult.OK)
+                panel1.BackColor = cd.Color;
         }
 
         // Getting point's coordinates
@@ -175,7 +238,7 @@ namespace LR1_Drawing {
 
         //Canvas and current figures list clearing
         private void button_clean_Click(object sender, EventArgs e){
-            graph.Clear(Color.White);
+            graph.Clear(back_cd.Color);
             lb_figures.Items.Clear();
             DisplayedFigures.Clear();
         }

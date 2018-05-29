@@ -35,13 +35,13 @@
             this.label_y2 = new System.Windows.Forms.Label();
             this.tb_y2 = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button_save = new System.Windows.Forms.Button();
             this.cb_thikness = new System.Windows.Forms.ComboBox();
             this.button_color = new System.Windows.Forms.Button();
             this.label_thikness = new System.Windows.Forms.Label();
             this.label_brush = new System.Windows.Forms.Label();
             this.lb_figures = new System.Windows.Forms.ListBox();
             this.button_load = new System.Windows.Forms.Button();
-            this.button_save = new System.Windows.Forms.Button();
             this.button_clean = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.tb_y3 = new System.Windows.Forms.TextBox();
@@ -50,16 +50,24 @@
             this.tb_x3 = new System.Windows.Forms.TextBox();
             this.label_choice = new System.Windows.Forms.Label();
             this.colorDialog_brush = new System.Windows.Forms.ColorDialog();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.backgroundColorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuColorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.languageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.englishToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.germanyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.picture)).BeginInit();
             this.panel1.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // picture
             // 
             this.picture.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.picture.Location = new System.Drawing.Point(-2, 0);
+            this.picture.Location = new System.Drawing.Point(0, 24);
             this.picture.Name = "picture";
-            this.picture.Size = new System.Drawing.Size(1210, 713);
+            this.picture.Size = new System.Drawing.Size(1208, 689);
             this.picture.TabIndex = 0;
             this.picture.TabStop = false;
             this.picture.MouseClick += new System.Windows.Forms.MouseEventHandler(this.picture_MouseClick);
@@ -67,7 +75,7 @@
             // button_draw
             // 
             this.button_draw.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button_draw.Location = new System.Drawing.Point(19, 526);
+            this.button_draw.Location = new System.Drawing.Point(20, 612);
             this.button_draw.Name = "button_draw";
             this.button_draw.Size = new System.Drawing.Size(209, 37);
             this.button_draw.TabIndex = 1;
@@ -155,13 +163,13 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.button_save);
             this.panel1.Controls.Add(this.cb_thikness);
             this.panel1.Controls.Add(this.button_color);
             this.panel1.Controls.Add(this.label_thikness);
             this.panel1.Controls.Add(this.label_brush);
             this.panel1.Controls.Add(this.lb_figures);
             this.panel1.Controls.Add(this.button_load);
-            this.panel1.Controls.Add(this.button_save);
             this.panel1.Controls.Add(this.button_clean);
             this.panel1.Controls.Add(this.button_draw);
             this.panel1.Controls.Add(this.label1);
@@ -179,12 +187,24 @@
             this.panel1.Controls.Add(this.tb_y1);
             this.panel1.Controls.Add(this.tb_x2);
             this.panel1.Controls.Add(this.label_y1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Location = new System.Drawing.Point(0, 24);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(274, 713);
+            this.panel1.Size = new System.Drawing.Size(274, 689);
             this.panel1.TabIndex = 12;
+            // 
+            // button_save
+            // 
+            this.button_save.Enabled = false;
+            this.button_save.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button_save.Location = new System.Drawing.Point(20, 449);
+            this.button_save.Name = "button_save";
+            this.button_save.Size = new System.Drawing.Size(209, 37);
+            this.button_save.TabIndex = 27;
+            this.button_save.Text = "Save";
+            this.button_save.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.button_save.UseVisualStyleBackColor = true;
+            this.button_save.Click += new System.EventHandler(this.button_save_Click);
             // 
             // cb_thikness
             // 
@@ -231,14 +251,14 @@
             this.lb_figures.ItemHeight = 20;
             this.lb_figures.Location = new System.Drawing.Point(17, 324);
             this.lb_figures.Name = "lb_figures";
-            this.lb_figures.Size = new System.Drawing.Size(211, 124);
+            this.lb_figures.Size = new System.Drawing.Size(211, 104);
             this.lb_figures.TabIndex = 13;
             this.lb_figures.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.lb_figures_KeyPress);
             // 
             // button_load
             // 
             this.button_load.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button_load.Location = new System.Drawing.Point(17, 664);
+            this.button_load.Location = new System.Drawing.Point(20, 492);
             this.button_load.Name = "button_load";
             this.button_load.Size = new System.Drawing.Size(209, 37);
             this.button_load.TabIndex = 28;
@@ -247,22 +267,10 @@
             this.button_load.UseVisualStyleBackColor = true;
             this.button_load.Click += new System.EventHandler(this.button_load_Click);
             // 
-            // button_save
-            // 
-            this.button_save.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button_save.Location = new System.Drawing.Point(17, 621);
-            this.button_save.Name = "button_save";
-            this.button_save.Size = new System.Drawing.Size(209, 37);
-            this.button_save.TabIndex = 27;
-            this.button_save.Text = "Save";
-            this.button_save.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
-            this.button_save.UseVisualStyleBackColor = true;
-            this.button_save.Click += new System.EventHandler(this.button_save_Click);
-            // 
             // button_clean
             // 
             this.button_clean.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button_clean.Location = new System.Drawing.Point(18, 472);
+            this.button_clean.Location = new System.Drawing.Point(20, 567);
             this.button_clean.Name = "button_clean";
             this.button_clean.Size = new System.Drawing.Size(210, 39);
             this.button_clean.TabIndex = 24;
@@ -324,21 +332,87 @@
             this.label_choice.TabIndex = 16;
             this.label_choice.Text = "Choose figure\'s type";
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.viewToolStripMenuItem,
+            this.languageToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1089, 24);
+            this.menuStrip1.TabIndex = 13;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // viewToolStripMenuItem
+            // 
+            this.viewToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.backgroundColorToolStripMenuItem,
+            this.menuColorToolStripMenuItem});
+            this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
+            this.viewToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.viewToolStripMenuItem.Text = "View";
+            // 
+            // backgroundColorToolStripMenuItem
+            // 
+            this.backgroundColorToolStripMenuItem.Name = "backgroundColorToolStripMenuItem";
+            this.backgroundColorToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
+            this.backgroundColorToolStripMenuItem.Text = "Background color";
+            this.backgroundColorToolStripMenuItem.Click += new System.EventHandler(this.backgroundColorToolStripMenuItem_Click);
+            // 
+            // menuColorToolStripMenuItem
+            // 
+            this.menuColorToolStripMenuItem.Name = "menuColorToolStripMenuItem";
+            this.menuColorToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
+            this.menuColorToolStripMenuItem.Text = "Menu color";
+            this.menuColorToolStripMenuItem.Click += new System.EventHandler(this.menuColorToolStripMenuItem_Click);
+            // 
+            // languageToolStripMenuItem
+            // 
+            this.languageToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.englishToolStripMenuItem,
+            this.germanyToolStripMenuItem});
+            this.languageToolStripMenuItem.Name = "languageToolStripMenuItem";
+            this.languageToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
+            this.languageToolStripMenuItem.Text = "Language";
+            // 
+            // englishToolStripMenuItem
+            // 
+            this.englishToolStripMenuItem.Checked = true;
+            this.englishToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.englishToolStripMenuItem.Name = "englishToolStripMenuItem";
+            this.englishToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.englishToolStripMenuItem.Text = "English";
+            this.englishToolStripMenuItem.Click += new System.EventHandler(this.englishToolStripMenuItem_Click);
+            // 
+            // germanyToolStripMenuItem
+            // 
+            this.germanyToolStripMenuItem.Name = "germanyToolStripMenuItem";
+            this.germanyToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.germanyToolStripMenuItem.Text = "Русский";
+            this.germanyToolStripMenuItem.Click += new System.EventHandler(this.germanyToolStripMenuItem_Click);
+            // 
             // FormDrawing
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1208, 713);
+            this.ClientSize = new System.Drawing.Size(1089, 685);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.picture);
+            this.Controls.Add(this.menuStrip1);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "FormDrawing";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Drawing";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormDrawing_FormClosing);
             this.Load += new System.EventHandler(this.FormDrawing_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picture)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -371,6 +445,13 @@
         private System.Windows.Forms.ColorDialog colorDialog_brush;
         private System.Windows.Forms.ComboBox cb_thikness;
         private System.Windows.Forms.Button button_color;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem viewToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem backgroundColorToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem languageToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem menuColorToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem englishToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem germanyToolStripMenuItem;
     }
 }
 

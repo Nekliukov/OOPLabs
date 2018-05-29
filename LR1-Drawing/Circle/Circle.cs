@@ -1,8 +1,10 @@
 ﻿using System.Drawing;
 using System;
 using FigureClassLibrary;
+using System.Xml.Serialization;
 
 namespace CircleClassLibrary {
+    [XmlInclude(typeof(Circle))]
     public class Circle : Figure {
         public Circle() : base() { }
 
