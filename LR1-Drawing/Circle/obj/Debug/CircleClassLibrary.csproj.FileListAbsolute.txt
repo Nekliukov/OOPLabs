@@ -3,3 +3,9 @@ D:\github\OOPLabs\LR1-Drawing\LR1-Drawing\bin\Debug\CircleClassLibrary.dll
 D:\github\OOPLabs\LR1-Drawing\LR1-Drawing\bin\Debug\CircleClassLibrary.pdb
 D:\github\OOPLabs\LR1-Drawing\Circle\obj\Debug\CircleClassLibrary.dll
 D:\github\OOPLabs\LR1-Drawing\Circle\obj\Debug\CircleClassLibrary.pdb
+D:\git_projects\OOPLabs\LR1-Drawing\LR1-Drawing\bin\Debug\CircleClassLibrary.dll
+D:\git_projects\OOPLabs\LR1-Drawing\LR1-Drawing\bin\Debug\CircleClassLibrary.pdb
+D:\git_projects\OOPLabs\LR1-Drawing\Circle\obj\Debug\CircleClassLibrary.csprojResolveAssemblyReference.cache
+D:\git_projects\OOPLabs\LR1-Drawing\Circle\obj\Debug\CircleClassLibrary.csproj.CoreCompileInputs.cache
+D:\git_projects\OOPLabs\LR1-Drawing\Circle\obj\Debug\CircleClassLibrary.dll
+D:\git_projects\OOPLabs\LR1-Drawing\Circle\obj\Debug\CircleClassLibrary.pdb

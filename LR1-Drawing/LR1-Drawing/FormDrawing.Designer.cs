@@ -52,7 +52,6 @@
             this.colorDialog_brush = new System.Windows.Forms.ColorDialog();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.backgroundColorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuColorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.languageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.englishToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -346,23 +345,15 @@
             // viewToolStripMenuItem
             // 
             this.viewToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.backgroundColorToolStripMenuItem,
             this.menuColorToolStripMenuItem});
             this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
             this.viewToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
             this.viewToolStripMenuItem.Text = "View";
             // 
-            // backgroundColorToolStripMenuItem
-            // 
-            this.backgroundColorToolStripMenuItem.Name = "backgroundColorToolStripMenuItem";
-            this.backgroundColorToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
-            this.backgroundColorToolStripMenuItem.Text = "Background color";
-            this.backgroundColorToolStripMenuItem.Click += new System.EventHandler(this.backgroundColorToolStripMenuItem_Click);
-            // 
             // menuColorToolStripMenuItem
             // 
             this.menuColorToolStripMenuItem.Name = "menuColorToolStripMenuItem";
-            this.menuColorToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
+            this.menuColorToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.menuColorToolStripMenuItem.Text = "Menu color";
             this.menuColorToolStripMenuItem.Click += new System.EventHandler(this.menuColorToolStripMenuItem_Click);
             // 
@@ -377,8 +368,6 @@
             // 
             // englishToolStripMenuItem
             // 
-            this.englishToolStripMenuItem.Checked = true;
-            this.englishToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.englishToolStripMenuItem.Name = "englishToolStripMenuItem";
             this.englishToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.englishToolStripMenuItem.Text = "English";
@@ -447,7 +436,6 @@
         private System.Windows.Forms.Button button_color;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem viewToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem backgroundColorToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem languageToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem menuColorToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem englishToolStripMenuItem;

@@ -3,3 +3,9 @@ D:\github\OOPLabs\LR1-Drawing\LR1-Drawing\bin\Debug\RectangleClassLibrary.pdb
 D:\github\OOPLabs\LR1-Drawing\Rectangle\obj\Debug\RectangleClassLibrary.csprojResolveAssemblyReference.cache
 D:\github\OOPLabs\LR1-Drawing\Rectangle\obj\Debug\RectangleClassLibrary.dll
 D:\github\OOPLabs\LR1-Drawing\Rectangle\obj\Debug\RectangleClassLibrary.pdb
+D:\git_projects\OOPLabs\LR1-Drawing\LR1-Drawing\bin\Debug\RectangleClassLibrary.dll
+D:\git_projects\OOPLabs\LR1-Drawing\LR1-Drawing\bin\Debug\RectangleClassLibrary.pdb
+D:\git_projects\OOPLabs\LR1-Drawing\Rectangle\obj\Debug\RectangleClassLibrary.csprojResolveAssemblyReference.cache
+D:\git_projects\OOPLabs\LR1-Drawing\Rectangle\obj\Debug\RectangleClassLibrary.csproj.CoreCompileInputs.cache
+D:\git_projects\OOPLabs\LR1-Drawing\Rectangle\obj\Debug\RectangleClassLibrary.dll
+D:\git_projects\OOPLabs\LR1-Drawing\Rectangle\obj\Debug\RectangleClassLibrary.pdb

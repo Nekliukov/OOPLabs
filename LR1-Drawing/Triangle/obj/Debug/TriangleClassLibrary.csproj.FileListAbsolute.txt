@@ -3,3 +3,9 @@ D:\github\OOPLabs\LR1-Drawing\LR1-Drawing\bin\Debug\TriangleClassLibrary.pdb
 D:\github\OOPLabs\LR1-Drawing\Triangle\obj\Debug\TriangleClassLibrary.dll
 D:\github\OOPLabs\LR1-Drawing\Triangle\obj\Debug\TriangleClassLibrary.pdb
 D:\github\OOPLabs\LR1-Drawing\Triangle\obj\Debug\TriangleClassLibrary.csprojResolveAssemblyReference.cache
+D:\git_projects\OOPLabs\LR1-Drawing\LR1-Drawing\bin\Debug\TriangleClassLibrary.dll
+D:\git_projects\OOPLabs\LR1-Drawing\LR1-Drawing\bin\Debug\TriangleClassLibrary.pdb
+D:\git_projects\OOPLabs\LR1-Drawing\Triangle\obj\Debug\TriangleClassLibrary.csprojResolveAssemblyReference.cache
+D:\git_projects\OOPLabs\LR1-Drawing\Triangle\obj\Debug\TriangleClassLibrary.csproj.CoreCompileInputs.cache
+D:\git_projects\OOPLabs\LR1-Drawing\Triangle\obj\Debug\TriangleClassLibrary.dll
+D:\git_projects\OOPLabs\LR1-Drawing\Triangle\obj\Debug\TriangleClassLibrary.pdb

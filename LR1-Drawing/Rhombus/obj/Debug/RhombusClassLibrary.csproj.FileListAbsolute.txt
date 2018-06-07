@@ -3,3 +3,9 @@ D:\github\OOPLabs\LR1-Drawing\LR1-Drawing\bin\Debug\RhombusClassLibrary.pdb
 D:\github\OOPLabs\LR1-Drawing\Rhombus\obj\Debug\RhombusClassLibrary.dll
 D:\github\OOPLabs\LR1-Drawing\Rhombus\obj\Debug\RhombusClassLibrary.pdb
 D:\github\OOPLabs\LR1-Drawing\Rhombus\obj\Debug\RhombusClassLibrary.csprojResolveAssemblyReference.cache
+D:\git_projects\OOPLabs\LR1-Drawing\LR1-Drawing\bin\Debug\RhombusClassLibrary.dll
+D:\git_projects\OOPLabs\LR1-Drawing\LR1-Drawing\bin\Debug\RhombusClassLibrary.pdb
+D:\git_projects\OOPLabs\LR1-Drawing\Rhombus\obj\Debug\RhombusClassLibrary.csprojResolveAssemblyReference.cache
+D:\git_projects\OOPLabs\LR1-Drawing\Rhombus\obj\Debug\RhombusClassLibrary.csproj.CoreCompileInputs.cache
+D:\git_projects\OOPLabs\LR1-Drawing\Rhombus\obj\Debug\RhombusClassLibrary.dll
+D:\git_projects\OOPLabs\LR1-Drawing\Rhombus\obj\Debug\RhombusClassLibrary.pdb

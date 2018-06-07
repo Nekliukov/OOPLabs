@@ -11,7 +11,6 @@ namespace LR1_Drawing
     [Serializable]
     public class Configuration {
         public int language;
-        public int backgroundcolor;
         public int menucolor;
 
         [NonSerialized]
@@ -25,6 +24,7 @@ namespace LR1_Drawing
                                      { "Clean", "Очистить" },
                                      { "Choose figure's type", "Выберите тип фигуры" },
                                      { "Brush color:", "Цвет кисти" },
+                                     { "Thikness:", "Толщина:" },
                                      { "Figures:", "Фигуры" },
                                      { "Circle", "Круг" },
                                      { "Rectangle", "Прямоугольник" },
@@ -36,36 +36,34 @@ namespace LR1_Drawing
 
                                  };
 
-
         public void ChangeLanguge(MenuStrip ms, Control menu, ComboBox cb,
-                                   ToolStripItemCollection menuEl, int toLang) {
-            language = toLang;
-            foreach (ToolStripItem el in ms.Items)        
-                for (int i = 0; i < 16; i++)
-                        if (el.Text == dict[i, toLang^1])
-                            el.Text = dict[i, toLang];
+                                  ToolStripItemCollection menuEl, int toLang) {
+            foreach (ToolStripItem el in ms.Items)
+                el.Text = Translate(el.Text, toLang);
 
-                foreach (ToolStripMenuItem el in ms.Items)
-                {
-                    foreach (ToolStripItem menuItem in el.DropDownItems)
-                    {
-                        for (int i = 0; i < 16; i++)
-                            if (menuItem.Text == dict[i, toLang ^ 1])
-                                menuItem.Text = dict[i, toLang];
-                    }
-                }
+            foreach (ToolStripMenuItem el in ms.Items)
+                foreach (ToolStripItem menuItem in el.DropDownItems)
+                    menuItem.Text = Translate(menuItem.Text, toLang);
 
-                foreach (Control el in menu.Controls)        
+            foreach (Control el in menu.Controls)
                 if (el is Label || el is Button || el is ComboBox)
-                for (int i = 0; i < 16; i++)
-                        if (el.Text == dict[i, toLang ^ 1])
-                            el.Text = dict[i, toLang];
+                    el.Text = Translate(el.Text, toLang);
 
-                for (int i = 0; i < cb.Items.Count; i++)
-                    for (int j = 0; j < 16; j++)
-                        if (cb.GetItemText(cb.Items[i]) == dict[j, toLang ^ 1])
-                            cb.Items[i] = dict[j, toLang];
+            for (int i = 0; i < cb.Items.Count; i++)
+                for (int j = 0; j < dict.GetLength(0); j++)
+                    if (cb.GetItemText(cb.Items[i]) == dict[j, toLang ^ 1])
+                        cb.Items[i] = dict[j, toLang];
+
+           cb.Text = Translate(cb.Text, toLang);
         }
-   }
+
+        public string Translate(string word, int toLang) {
+            for (int i = 0; i < dict.GetLength(0); i++)
+                if (word == dict[i, toLang ^ 1])
+                    return dict[i, toLang];
+            return word;
+
+        }
+    }
 
 }

@@ -23,32 +23,22 @@ namespace LR1_Drawing {
             cb_thikness.Items.Add(10);
             cb_thikness.Items.Add(12);
 
-
-            Configuration confSt = new Configuration();
-            using (var stream = new FileStream("config.xml", FileMode.Open))
-            {
+            using (var stream = new FileStream("config.xml", FileMode.Open)){
                 XmlSerializer XML = new XmlSerializer(typeof(Configuration));
                 confSt = (Configuration)XML.Deserialize(stream);
-                picture.BackColor = System.Drawing.Color.FromArgb(confSt.backgroundcolor);
                 panel1.BackColor = System.Drawing.Color.FromArgb(confSt.menucolor);
                 Configuration langConf = new Configuration();
                 langConf.ChangeLanguge(menuStrip1, panel1, comboBox1,
                                     menuStrip1.Items, confSt.language);
             }
-            back_cd.Color = picture.BackColor;
-
-            foreach (ToolStripItem c in menuStrip1.Items) 
-            {
-               if (c is ToolStripMenuItem)
-                MessageBox.Show(c.Text);
-            }
 
         }
 
         Graphics graph;
+        Configuration confSt = new Configuration();
         int x0, y0, x1, y1, x2, y2;
 
-        //List that contain all displayed figures !!!
+        //List that contains all displayed figures !!!
         public List<Figure> DisplayedFigures = new List<Figure>();
 
         private void button_save_Click(object sender, EventArgs e) {
@@ -119,7 +109,7 @@ namespace LR1_Drawing {
         private void FormDrawing_Load(object sender, EventArgs e)
         {
             foreach (Figure obj in FigureList.figures){
-                comboBox1.Items.Add(obj.GetType().Name);
+                comboBox1.Items.Add(confSt.Translate(obj.GetType().Name, confSt.language));
             }
             cb_thikness.Text = "1";
         }
@@ -129,39 +119,24 @@ namespace LR1_Drawing {
         {
             cnflang.ChangeLanguge(menuStrip1, panel1, comboBox1,
                                 menuStrip1.Items, 0);
+            cnflang.language = 0;
         }
 
         private void germanyToolStripMenuItem_Click(object sender, EventArgs e)
         {
             cnflang.ChangeLanguge(menuStrip1, panel1, comboBox1,
                                 menuStrip1.Items, 1);
+            cnflang.language = 1;
         }
 
-        private void FormDrawing_FormClosing(object sender, FormClosingEventArgs e)
-        {
+        private void FormDrawing_FormClosing(object sender, FormClosingEventArgs e) {
             Configuration conf = new Configuration();
-            conf.backgroundcolor = back_cd.Color.ToArgb();
             conf.menucolor = panel1.BackColor.ToArgb();
             conf.language = cnflang.language;
-            using (var stream = new FileStream("config.xml", FileMode.Create))
-            {
+            using (var stream = new FileStream("config.xml", FileMode.Create)) {
                 XmlSerializer XML = new XmlSerializer(typeof(Configuration));
                 XML.Serialize(stream, conf);
             }
-        }
-
-        ColorDialog back_cd = new ColorDialog();
-        private void backgroundColorToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            back_cd.AllowFullOpen = false;
-            if (back_cd.ShowDialog() == DialogResult.OK)
-            {
-                graph.Clear(back_cd.Color);
-                foreach (Figure el in DisplayedFigures)
-                    el.DoDraw(graph);
-            }
-            
-
         }
 
         private void menuColorToolStripMenuItem_Click(object sender, EventArgs e)
@@ -186,7 +161,7 @@ namespace LR1_Drawing {
             }
             //Choosing of the figure, that we want to draw
             foreach (Figure obj in FigureList.figures){
-                if (obj.GetType().Name == comboBox1.Text) {
+                if (obj.GetType().Name == confSt.Translate(comboBox1.Text, 0)) {
                     int last = DisplayedFigures.Count;
                     DisplayedFigures.Add((Figure)obj.Clone(
                         button_color.BackColor.ToArgb(),
@@ -238,7 +213,7 @@ namespace LR1_Drawing {
 
         //Canvas and current figures list clearing
         private void button_clean_Click(object sender, EventArgs e){
-            graph.Clear(back_cd.Color);
+            graph.Clear(Color.White);
             lb_figures.Items.Clear();
             DisplayedFigures.Clear();
         }

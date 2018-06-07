@@ -1,6 +1,5 @@
 <?xml version="1.0"?>
 <Configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <language>1</language>
-  <backgroundcolor>-16744193</backgroundcolor>
-  <menucolor>-32704</menucolor>
+  <menucolor>-65536</menucolor>
 </Configuration>

@@ -3,3 +3,9 @@ D:\github\OOPLabs\LR1-Drawing\LR1-Drawing\bin\Debug\EllipseClassLibrary.dll
 D:\github\OOPLabs\LR1-Drawing\LR1-Drawing\bin\Debug\EllipseClassLibrary.pdb
 D:\github\OOPLabs\LR1-Drawing\Ellipse\obj\Debug\EllipseClassLibrary.dll
 D:\github\OOPLabs\LR1-Drawing\Ellipse\obj\Debug\EllipseClassLibrary.pdb
+D:\git_projects\OOPLabs\LR1-Drawing\LR1-Drawing\bin\Debug\EllipseClassLibrary.dll
+D:\git_projects\OOPLabs\LR1-Drawing\LR1-Drawing\bin\Debug\EllipseClassLibrary.pdb
+D:\git_projects\OOPLabs\LR1-Drawing\Ellipse\obj\Debug\EllipseClassLibrary.csprojResolveAssemblyReference.cache
+D:\git_projects\OOPLabs\LR1-Drawing\Ellipse\obj\Debug\EllipseClassLibrary.csproj.CoreCompileInputs.cache
+D:\git_projects\OOPLabs\LR1-Drawing\Ellipse\obj\Debug\EllipseClassLibrary.dll
+D:\git_projects\OOPLabs\LR1-Drawing\Ellipse\obj\Debug\EllipseClassLibrary.pdb
