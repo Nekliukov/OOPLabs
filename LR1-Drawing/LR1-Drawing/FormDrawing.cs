@@ -31,10 +31,14 @@ namespace LR1_Drawing {
                 langConf.ChangeLanguge(menuStrip1, panel1, comboBox1,
                                     menuStrip1.Items, confSt.language);
             }
+            types = new Type[FigureList.figures.Count - 1];
+            for (int i = 0; i < types.Length; i++)
+                types[i] = FigureList.figures[i].GetType();
 
         }
 
         Graphics graph;
+        Type[] types;
         Configuration confSt = new Configuration();
         int x0, y0, x1, y1, x2, y2;
 
@@ -43,7 +47,7 @@ namespace LR1_Drawing {
 
         private void button_save_Click(object sender, EventArgs e) {
             using (var stream = new FileStream("objects.xml", FileMode.Create)) {
-                XmlSerializer XML = new XmlSerializer(typeof(List<Figure>));
+                XmlSerializer XML = new XmlSerializer(typeof(List<Figure>), types);
                 XML.Serialize(stream, DisplayedFigures);            
             }
         }
@@ -64,7 +68,7 @@ namespace LR1_Drawing {
 
         public List<Figure> LoadFile() {
             using (var stream = new FileStream("objects.xml", FileMode.Open)) {
-                XmlSerializer XML = new XmlSerializer(typeof(List<Figure>));
+                XmlSerializer XML = new XmlSerializer(typeof(List<Figure>), types);
                 return (List<Figure>)XML.Deserialize(stream);             
             }
         }

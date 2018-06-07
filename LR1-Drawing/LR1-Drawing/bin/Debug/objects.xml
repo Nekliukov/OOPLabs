@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<ArrayOfFigure xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Figure xsi:type="Line">
+    <firstp>
+      <X>575</X>
+      <Y>353</Y>
+    </firstp>
+    <secondp>
+      <X>862</X>
+      <Y>331</Y>
+    </secondp>
+    <BrushColor>-16777216</BrushColor>
+    <BrushThikness>1</BrushThikness>
+  </Figure>
+  <Figure xsi:type="Line">
+    <firstp>
+      <X>791</X>
+      <Y>243</Y>
+    </firstp>
+    <secondp>
+      <X>791</X>
+      <Y>432</Y>
+    </secondp>
+    <BrushColor>-16760704</BrushColor>
+    <BrushThikness>6</BrushThikness>
+  </Figure>
+  <Figure xsi:type="Circle">
+    <firstp>
+      <X>795</X>
+      <Y>337</Y>
+    </firstp>
+    <secondp>
+      <X>573</X>
+      <Y>324</Y>
+    </secondp>
+    <BrushColor>-65536</BrushColor>
+    <BrushThikness>6</BrushThikness>
+  </Figure>
+</ArrayOfFigure>

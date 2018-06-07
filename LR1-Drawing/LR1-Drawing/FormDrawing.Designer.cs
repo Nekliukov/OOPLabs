@@ -194,7 +194,6 @@
             // 
             // button_save
             // 
-            this.button_save.Enabled = false;
             this.button_save.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button_save.Location = new System.Drawing.Point(20, 449);
             this.button_save.Name = "button_save";
@@ -353,7 +352,7 @@
             // menuColorToolStripMenuItem
             // 
             this.menuColorToolStripMenuItem.Name = "menuColorToolStripMenuItem";
-            this.menuColorToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.menuColorToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
             this.menuColorToolStripMenuItem.Text = "Menu color";
             this.menuColorToolStripMenuItem.Click += new System.EventHandler(this.menuColorToolStripMenuItem_Click);
             // 
@@ -369,14 +368,14 @@
             // englishToolStripMenuItem
             // 
             this.englishToolStripMenuItem.Name = "englishToolStripMenuItem";
-            this.englishToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.englishToolStripMenuItem.Size = new System.Drawing.Size(119, 22);
             this.englishToolStripMenuItem.Text = "English";
             this.englishToolStripMenuItem.Click += new System.EventHandler(this.englishToolStripMenuItem_Click);
             // 
             // germanyToolStripMenuItem
             // 
             this.germanyToolStripMenuItem.Name = "germanyToolStripMenuItem";
-            this.germanyToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.germanyToolStripMenuItem.Size = new System.Drawing.Size(119, 22);
             this.germanyToolStripMenuItem.Text = "Русский";
             this.germanyToolStripMenuItem.Click += new System.EventHandler(this.germanyToolStripMenuItem_Click);
             // 
